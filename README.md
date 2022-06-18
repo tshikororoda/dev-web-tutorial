@@ -9,3 +9,10 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 ***
 
 ### Let’s start with our development
+The first things we shall do is to create a website directory on _`c driver`_ for storing our website files. We will be working on _`Git Bash terminal`_. Now, start by opening your Git bash terminal, then clicking inside your terminal after it has open, and then type the following command: _`cd c:/`_ followed by an Enter to move to _`c:/ drive`_.
+
+```
+cd c:/
+
+```
+_Here on out, to execute (i.e., run) a command means to type it into a git bash terminal and then hit Enter. Commands are “case-sensitive,” so be sure not to type in uppercase when you mean lowercase or vice versa._
