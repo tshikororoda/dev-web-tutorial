@@ -7,6 +7,7 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 + Your website must include at least one _`list (ordered or unordered)`_, at least one _`table`_, and at least one _`image`_.
 + You should also have some content placed within _`paragraph`_.
 + Your website must have at least one stylesheet file. The stylesheet(s) must use at least five different _`CSS properties`_, and at least five different types of _`CSS selectors`_. You must use the _`#id selector`_ at least once, and the _`.class selector`_ at least once.
++ •	All symbols should be implemented using `HTML entities`.
 
 ***
 
@@ -27,7 +28,7 @@ _To move yourself into (i.e., open) that directory. Our prompt should now resemb
 _To move yourself into (i.e., open) that directory. Our prompt should now resemble the command below. Now, execute command below:_
       $ cd dev-personal-site
 
-We have successfully created _root directory_ of our _personal website_. <br />
+:clap: We have successfully created _root directory_ of our _personal website_. <br />
 Below is the list of _command we have used_:
 
 | Command | Description                  |
@@ -35,8 +36,11 @@ Below is the list of _command we have used_:
 | _cd_    | _Change directory._          |
 | _mkdir_ | _To create a new directory._ |
 
-### Git - version control
-#### Create a file called _`readme.md`_.
+### GitHub
+GitHub is a _code hosting platform for version control and collaboration_. It lets us and others work together on projects from anywhere. At first, we will look at GitHub essentials: _repositories, branches, commits, and pull requests_. Since we have already created our development environment directory called _dev-personal-site directory_, we’ll make it a _repository_ and learn GitHub's _pull request_ workflow which is a popular way to create and review code.
+
+### Repository
+#### Create a file called _`README.md`_.
 We can create files from _git bash terminal_ in two ways. The first way is to use _**touch command**_ and the other way is to use _**echo command**_. If you want to write any specific data in the file, then use _**echo command**_. If you are not bothered about the data in the file but just want to create a file, then you can use _**touch command**_. <br />
 _Now, execute the command below_:
 
@@ -65,8 +69,9 @@ $ git init
 The _`git init command`_ will Initialize _dev-personal-site directory_ to an empty _Git repository in C:/workspace/dev-personal-site/.git/._
 
 ### Project directory Structure
+![project directory structure](./resources/project-structure.png)
 
-Now, let’s create the subdirectory folder using _Git bash terminal_. For creating subfolder called _`assets`_. assets directory is a subdirectory of _`dev-personal-site`_ directory. Inside _assets_ directory we will create subdirectory of assets called _css, js and img_ as shown above. <br />
+Now, let’s create the _subdirectory_ folder using _Git bash terminal_. For creating subfolder called _`assets`_. assets directory is a subdirectory of _`dev-personal-site`_ directory. Inside _assets_ directory we will create subdirectory of assets called _css, js and img_ as shown above. <br />
 _Now, execute the command below_:
 
 ```
@@ -127,4 +132,28 @@ $ git branch portfolio
 $ git branch contact
 
 ```
+
+#### Basic branching and merging
+Now, you have switch to home branch. Let’s go through a simple example of branching and merging with a workflow that you might use in the real world based on our personal website project. Let’s follow these steps:
+
+1. Do some work on a website main branch: = > _`‘You have done html5 document skeleton?’`_
+2.	Create a branch for a new personal website you’re working on: => _`‘You have created home branch’`_
+3.	Do some work in that new created branch: => _`‘This what we are going to do now’`_
+
+#### Switching branches
+To switch to homepage branch, you execute the following command:
+```
+$ git checkout home
+
+```
+
+
 ### Home - Landing page
+#### Document Appropriate Skelton
+First, we need to open our HTML editor _(Notepad++)_. When you open index.html, it will be clean white file which is to write your source code. If you are a new beginner on html, switch to [`simple task`](#) before we perform the actual coding.
+
+In this [HTML document structure](https://github.com/tshikororoda/html-css-js.git), there's a folder called _hds_, there's html file named _hds.index.html_. Open the this html file, then copy and paste everything on your _index.html_ on your project and save the changes. Before we _commit_ this changes on our repository, we must validate our mark – up language. We use [ w3 Mark-up validation service](https://validator.w3.org/). Validate _index.html_ on your project, `fix all the bugs`, when everything is ok, create a new version of your file with the following massage, _“I have added document structure for landing page”_.
+
+The first thing we will do is to _design prototype layout_. We do have apps specialized for prototype which professional developer use to design full – scale layout of the websites. But for this tutorial, the prototype screens are design using _Microsoft PowerPoint 2016_.
+
+![landing page prototype](./resources/landing-page-prototype.png)
