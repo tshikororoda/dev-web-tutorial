@@ -30,7 +30,7 @@ $ cd workspace
 ```
 
 + _`Create a new directory called dev-personal-site`. Now, execute command below:_
-```
+``` 
 $ mkdir dev-personal-site
 ```
 _To move yourself into (i.e., open) that directory. Our prompt should now resemble the command below. Now, execute command below:_
