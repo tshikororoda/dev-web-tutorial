@@ -21,12 +21,18 @@ $ cd c:/
   >_From here on out, to execute (i.e., run) a command means to type it into a git bash terminal and then hit Enter. Commands are “case-sensitive,” so be sure not to type in uppercase when you mean lowercase or vice versa._
 
 + _`Create a new directory called workspace on c drive`_. _Now, execute command below:_
-      $ mkdir workspace
+```
+$ mkdir workspace
+```
 _To move yourself into (i.e., open) that directory. Our prompt should now resemble the below. Now, execute command below:_
-      $ cd workspace
+```
+$ cd workspace
+```
 
 + _`Create a new directory called dev-personal-site`. Now, execute command below:_
-      $ mkdir dev-personal-site
+```
+$ mkdir dev-personal-site
+```
 _To move yourself into (i.e., open) that directory. Our prompt should now resemble the command below. Now, execute command below:_
       $ cd dev-personal-site
 
