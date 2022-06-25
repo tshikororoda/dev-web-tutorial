@@ -15,8 +15,10 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 Let's start by creating a _website directory on `c driver`_ for storing all our personal website files. We will be working on _`Git Bash terminal`_ to create our _personal website directory_. Now, open your _Git bash terminal_, then click inside _terminal_ after it has open, and then _type_ the following command: _`cd c:/`_ followed by an _`Enter`_.
 
 + _`Change directory to move to c drive`._
-      $ cd c:/
-_From here on out, to execute (i.e., run) a command means to type it into a git bash terminal and then hit Enter. Commands are “case-sensitive,” so be sure not to type in uppercase when you mean lowercase or vice versa._
+```
+$ cd c:/
+```
+  >_From here on out, to execute (i.e., run) a command means to type it into a git bash terminal and then hit Enter. Commands are “case-sensitive,” so be sure not to type in uppercase when you mean lowercase or vice versa._
 
 + _`Create a new directory called workspace on c drive`_. _Now, execute command below:_
       $ mkdir workspace
