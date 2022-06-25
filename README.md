@@ -2,7 +2,7 @@
 _@codewithtshikororoda_ | 2022
 
 ### Project requirements
-Alright, now it’s time to make your own _personal website_. Design a personal webpage about yourself. The project should be subject to the following requirements:
+Alright, now it’s time to make your own _personal website_. Design a personal webpage about yourself. The project should be subject to the following Specification:
 + Your website must contain at least four different _`pages`_, and it should be possible to get from any page on your website to any other page by following one or more _`hyperlinks`_.
 + Your website must include at least one _`list (ordered or unordered)`_, at least one _`table`_, and at least one _`image`_.
 + You should also have some content placed within _`paragraph`_.
@@ -147,12 +147,11 @@ $ git checkout home
 
 ```
 
-
 ### Home - Landing page
 #### Document Appropriate Skelton
 First, we need to open our HTML editor _(Notepad++)_. When you open index.html, it will be clean white file which is to write your source code. If you are a new beginner on html, switch to [`simple task`](#) before we perform the actual coding.
 
-In this [HTML document structure](https://github.com/tshikororoda/html-css-js.git), there's a folder called _hds_, there's html file named _hds.index.html_. Open the this html file, then copy and paste everything on your _index.html_ on your project and save the changes. Before we _commit_ this changes on our repository, we must validate our mark – up language. We use [ w3 Mark-up validation service](https://validator.w3.org/). Validate _index.html_ on your project, `fix all the bugs`, when everything is ok, create a new version of your file with the following massage, _“I have added document structure for landing page”_.
+In [HTML document structure](https://github.com/tshikororoda/html-css-js.git) repository, we can re-implement _hds_ source code, there's a folder called [_hds_](https://github.com/tshikororoda/html-css-js.git), there's html file named _hds.index.html_. Open the this html file, then copy and paste everything on your _index.html_ on your project and save the changes. Before we _commit_ this changes on our repository, we must validate our markup language. We use [ w3 Mark-up validation service](https://validator.w3.org/). Validate _index.html_ on your project, `fix all the bugs`, when everything is ok, create a new version of your file with the following massage, _“I have added document structure for landing page”_.
 
 The first thing we will do is to _design prototype layout_. We do have apps specialized for prototype which professional developer use to design full – scale layout of the websites. But for this tutorial, the prototype screens are design using _Microsoft PowerPoint 2016_.
 
