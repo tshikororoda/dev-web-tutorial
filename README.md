@@ -12,9 +12,9 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 ***
 
 ### Download and Install dev tools
-Version control [GIT](https://git-scm.com/download/win)
-Text editor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : [Notepad++](https://notepad-plus-plus.org/downloads/) , [VS Code](https://code.visualstudio.com/) , [Atom](https://atom.io/)
-Web browsers&nbsp;: [Chrome](https://www.google.com/chrome/) , [Firefox](https://www.mozilla.org/en-US/firefox/new/)
++ Version control [GIT](https://git-scm.com/download/win)
++ Text editor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : [Notepad++](https://notepad-plus-plus.org/downloads/) , [VS Code](https://code.visualstudio.com/) , [Atom](https://atom.io/)
++ Web browsers&nbsp;: [Chrome](https://www.google.com/chrome/) , [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 ### Let’s start with our development
 Let's start by creating a _website directory on `c driver`_ for storing all our personal website files. This is where all our website projects will live. We will be working on _`Git Bash terminal`_ to create our _personal website directory_. Now, open your _Git bash terminal_, then click inside _terminal_ after it has open, and then _type_ the following command: _`cd c:/`_ followed by an _`Enter`_.
@@ -169,6 +169,15 @@ In [HTML document structure](https://github.com/tshikororoda/html-css-js.git) re
 [[ Web tutorial](https://github.com/tshikororoda/dev-web-tutorial/tree/main/resources)
 
 #### Sketching out our design
-The first thing we will do is to _sketching out the layout_ of our websites landing page. We do have apps specialized for prototype design which professional developer uses to design full – scale layout of a websites. Grab pen and paper and sketch out roughly how you want your site to look.
+The first thing we will do is to _sketch out the layout_ of our websites landing page. We do have apps specialized for prototype design which professional developer uses to design full – scale layout of a websites. Grab pen and paper and sketch out roughly how you want your site to look. But for sketch below, is design using _Microsoft PowerPoint 2016_ after a rough sketch on paper.
 
 ![layout design](./resources/landing-page-sketch.png)
+
+###### Choosing your assets
++ Text content
++ [Theme color](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool)
++ Images
++ Font
+
+#### `Rendered HTML on the browsers`
+_Results on browsers_

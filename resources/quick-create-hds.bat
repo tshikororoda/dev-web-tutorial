@@ -30,7 +30,7 @@ cd %location%
 
 echo Type ^> Inside your chosen location, type in websites projects directory name.
 echo         This is where all your website projects will live.
-echo         E.g: workspace (or similar). 
+echo         E.g: workspace (or similar).
 set /p workspacedirname= " Type > : "
 mkdir %workspacedirname%
 cd %workspacedirname%
@@ -38,7 +38,7 @@ echo.
 
 echo Type ^> Inside this folder, type in project name.
 echo         This is where we stored all our website files.
-echo         E.g: dev-personal-site (or similar). 
+echo         E.g: dev-personal-site (or similar).
 set /p rootdir= "Type > : dev-"
 
 mkdir dev-%rootdir%
@@ -92,10 +92,10 @@ echo --^>
 echo.
 echo   		^<meta charset		="utf-8" /^>
 echo   		^<meta http-equiv	="X-UA-Compatible"	content="IE=edge" /^>
-echo   		^<meta       name	="viewport"        	content="content="width=device-width; initial-scale=1.0" /^>
-echo        ^<meta       name   ="author"           content="Dakalo Tshikororo"/^>
+echo   		^<meta       name	="viewport"        	content="content="width=device-width, initial-scale=1.0" /^>
+echo        ^<meta       name   ="author"           content="Dakalo Tshikororo" /^>
 echo.
-echo   		^<title^> Document Appropriate Skeleton^&#33;^</title^>
+echo   		^<title^> HTML Document Appropriate Skeleton^&#33;^</title^>
 echo.
 echo 	^</head^>
 echo 	^<body^>
