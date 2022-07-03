@@ -12,11 +12,12 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 ***
 
 ### Download and Install dev tools
-[GIT](https://git-scm.com/download/win)
-[Notepad++](https://notepad-plus-plus.org/downloads/)
+Version control [GIT](https://git-scm.com/download/win)
+Text editor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : [Notepad++](https://notepad-plus-plus.org/downloads/) , [VS Code](https://code.visualstudio.com/) , [Atom](https://atom.io/)
+Web browsers&nbsp;: [Chrome](https://www.google.com/chrome/) , [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 
 ### Let’s start with our development
-Let's start by creating a _website directory on `c driver`_ for storing all our personal website files. We will be working on _`Git Bash terminal`_ to create our _personal website directory_. Now, open your _Git bash terminal_, then click inside _terminal_ after it has open, and then _type_ the following command: _`cd c:/`_ followed by an _`Enter`_.
+Let's start by creating a _website directory on `c driver`_ for storing all our personal website files. This is where all our website projects will live. We will be working on _`Git Bash terminal`_ to create our _personal website directory_. Now, open your _Git bash terminal_, then click inside _terminal_ after it has open, and then _type_ the following command: _`cd c:/`_ followed by an _`Enter`_.
 
 + _`Change directory to move to c drive`._
 
@@ -165,9 +166,9 @@ First, we need to open our HTML editor _(Notepad++)_. When you open index.html, 
 
 In [HTML document structure](https://github.com/tshikororoda/html-css-js.git) repository, we can re-implement _hds_ source code, there's a folder called [_hds_](https://github.com/tshikororoda/html-css-js.git), there's html file named _hds.index.html_. Open the this html file, then copy and paste everything on your _index.html_ on your project and save the changes. Before we _commit_ this changes on our repository, we must validate our markup language. We use [ w3 Mark-up validation service](https://validator.w3.org/). Validate _index.html_ on your project, `fix all the bugs`, when everything is ok, create a new version of your file with the following massage, _“I have added document structure for landing page”_.
 
-[[ Web tutorial](https://github.com/tshikororoda/html-css-js.git)
+[[ Web tutorial](https://github.com/tshikororoda/dev-web-tutorial/tree/main/resources)
 
-#### Design prototype layout
-The first thing we will do is to _design prototype layout_. We do have apps specialized for prototype which professional developer use to design full – scale layout of the websites. But for this tutorial, the prototype screens are design using _Microsoft PowerPoint 2016_.
+#### Sketching out our design
+The first thing we will do is to _sketching out the layout_ of our websites landing page. We do have apps specialized for prototype design which professional developer uses to design full – scale layout of a websites. Grab pen and paper and sketch out roughly how you want your site to look.
 
-![landing page prototype](./resources/landing-page-prototype.png)
+![layout design](./resources/landing-page-sketch.png)
