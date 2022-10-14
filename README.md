@@ -1,5 +1,4 @@
-# Web tutorial
-_@codewithtshikororoda_ | 2022
+# Web Tutorial
 
 ### Project requirements
 Alright, now it’s time to make your own _personal website_. Design a personal webpage about yourself. The project should be subject to the following Specification:
@@ -162,11 +161,9 @@ $ git checkout home
 
 ### Home - Landing page
 #### Document Appropriate Skelton
-First, we need to open our HTML editor _(Notepad++)_. When you open index.html, it will be clean white file which is to write your source code. If you are a new beginner on html, switch to [`simple task`](#) before we perform the actual coding.
+First, we need to open our HTML editor _(Notepad++)_. When you open index.html, it will be clean white file which is to write your source code. If you are a new beginner on `HTML`, switch to [`task`](https://github.com/tshikororoda/html-css-js/) before you perform the actual coding with us.
 
 In [HTML document structure](https://github.com/tshikororoda/html-css-js.git) repository, we can re-implement _hds_ source code, there's a folder called [_hds_](https://github.com/tshikororoda/html-css-js.git), there's html file named _hds.index.html_. Open the this html file, then copy and paste everything on your _index.html_ on your project and save the changes. Before we _commit_ this changes on our repository, we must validate our markup language. We use [ w3 Mark-up validation service](https://validator.w3.org/). Validate _index.html_ on your project, `fix all the bugs`, when everything is ok, create a new version of your file with the following massage, _“I have added document structure for landing page”_.
-
-[[ Web tutorial](https://github.com/tshikororoda/dev-web-tutorial/tree/main/resources)
 
 #### Sketching out our design
 The first thing we will do is to _sketch out the layout_ of our websites landing page. We do have apps specialized for prototype design which professional developer uses to design full – scale layout of a websites. Grab pen and paper and sketch out roughly how you want your site to look. But for sketch below, is design using _Microsoft PowerPoint 2016_ after a rough sketch on paper.
@@ -174,7 +171,7 @@ The first thing we will do is to _sketch out the layout_ of our websites landing
 ![layout design](./resources/landing-page-sketch.png)
 
 ###### Choosing your assets
-+ Text content
++ Content
 + [Theme color](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool)
 + Images
 + Font
