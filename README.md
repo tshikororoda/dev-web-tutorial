@@ -149,7 +149,7 @@ Our personal website must contain at least four different _html_ pages. Our four
 Now, execute the command below:
 
 ```
-$ touch index.html about.html skills.html portfolio.html contact.html
+$ sudo touch index.html about.html skills.html portfolio.html contact.html
 
 ```
 
@@ -256,9 +256,11 @@ The first thing we will do is to _sketch out the layout_ of our websites landing
   [ Document body related tags here ]
 -->
 
+<!-- Start of wrapper container -->
+
     <div id="tda-wrapper">
 
-<!-- Header container -->
+<!-- Start Header container -->
 
         <header id="tda-top-header">
             <div class="tda-row">
@@ -269,11 +271,11 @@ The first thing we will do is to _sketch out the layout_ of our websites landing
                 <div class="tda-float-right">
                     <nav>
                         <ul>
-                            <li> <a href=""> Home       </a> </li>
-                            <li> <a href=""> About      </a> </li>
-                            <li> <a href=""> Skills     </a> </li>
-                            <li> <a href=""> Portpolio  </a> </li>
-                            <li> <a href=""> Contact    </a> </li>
+                            <li> <a href="#"> Home       </a> </li>
+                            <li> <a href="#"> About      </a> </li>
+                            <li> <a href="#"> Skills     </a> </li>
+                            <li> <a href="#"> Portfolio  </a> </li>
+                            <li> <a href="#"> Contact    </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -283,7 +285,9 @@ The first thing we will do is to _sketch out the layout_ of our websites landing
 
         </header>
 
-<!-- Main content container -->
+<!-- End Header container -->
+
+<!-- Start Main content container -->
 
         <main>
             <div class="tda-row">
@@ -323,16 +327,21 @@ The first thing we will do is to _sketch out the layout_ of our websites landing
 
         </main>
 
-<!-- Wrapper container -->
+<!-- End Main content container -->
+
+<!-- Start footer container -->
 
         <footer id="footer-wrapper">
             <div class="tda-row">
                 <span> 2020 &#64; tshikororoda </span>
             </div>
-
         </footer>
 
-    </div> <!-- End of wrapper container -->
+<!-- End footer container -->
+
+    </div>
+
+<!-- End of wrapper container -->
 
   </body>
 </html>
@@ -352,3 +361,275 @@ Here are some of the things validators ([ w3 Mark-up validation service](https:/
 #### Rendered landing page
 _Results on browsers_
 ![layout design](./resources/results_rendered.PNG)
+
+## Split source code on index.html
+
+Now, we need to split source code that we wrote earlier on _`(Index.html)`_. To achieve this, we simply create a new file called _`Home.html`_, then we cut the main content of _`Index.html`_ file and then paste the content on `Home.html`. Header and footer will remain on _`index.html`_ file as shown below. We want to avoid duplication of code mainly _`header and footer`_ since they appear in each module.
+
++ [Entry point  of all module: Index.html](#index)
++ [Module Home - Landing page](#home)
+
+<a name="index"></a>
+#### Entry point of all module : Index.html
+
+This is the entry point of our website. We have now remove main content from _index.html_ and paste it on _home.html_ file. Within main element on _index.html_ we add _&lt;iframe&gt;_ element as shown below.
+
+```html
+
+<!--/@codewithtshikororoda
+ Folder: dev-personal-site/Index.html
+
+ @Entry point of all website module
+
+-->
+
+<!DOCTYPE html> <!-- HTML5 document version declaration -->
+<html dir="ltr" lang="en">
+  <head>
+
+<!--____________________________________________
+  [ Document header related tags here ]
+-->
+
+    <meta charset     ="utf-8" />
+    <meta http-equiv  ="X-UA-Compatible"  content="IE=edge" />
+    <meta name        ="viewport"         content="width=device-width, initial-scale=1.0" />
+    <meta name        ="author"           content="Dakalo Tshikororo" />
+
+    <title> Home | Dakalo Tshikororo </title>
+
+  </head>
+  <body>
+
+<!--____________________________________________
+  [ Document body related tags here ]
+-->
+
+<!-- Start of wrapper container -->
+
+    <div id="tda-wrapper">
+
+<!-- Start Header container -->
+
+        <header id="tda-top-header">
+            <div class="tda-row">
+                <div class="tda-float-left">
+                    <span> tshikororoda </span>
+                </div>
+
+                <div class="tda-float-right">
+                    <nav>
+                        <ul>
+                            <li> <a href="#" onclick="loadPageContent('Home');">      Home       </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('About');">     About      </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('Skills');">    Skills     </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('Portfolio');"> Portfolio  </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('Contact');">   Contact    </a> </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <p class="clear tda-float-right"> You are welcome, you can view the site as you wish </p>
+            </div>
+
+        </header>
+
+<!-- End Header container -->
+
+<!-- Start Main content container -->
+
+        <main>
+          <iframe></iframe>
+        </main>
+
+<!-- End Main content container -->
+
+<!-- Start footer container -->
+
+        <footer id="footer-wrapper">
+            <div class="tda-row">
+                <span> 2020 &#64; tshikororoda </span>
+            </div>
+
+        </footer>
+
+<!-- End footer container -->
+
+    </div>
+
+<!-- End of wrapper container -->
+
+    <!-- External JavaScript -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
+
+```
+
+<a name="home"></a>
+#### Module Home - Landing page
+
++ [Create a file called Home.html](#)
++ [Home content](#)
+
+###### Create a file called: Home.html
+
+```
+
+$ sudo touch Home.html
+
+```
+###### Home content
+
+```html
+
+<!--/@codewithtshikororoda
+ Folder: dev-personal-site/Home.html
+
+ @Landing page
+ @Set as a default
+
+-->
+
+<div class="tda-row">
+	<section id="tda-section-one">
+	  <h2 class="hidden"> First section </h2>
+
+		<h1> Web programmer with Python, JavaScript <span> <a href="">more</a></span></h1>
+
+		<ul>
+			<li> Ul/UX Design, HTML5, CSS3  </li>
+			<li> Logo Design, Coreldraw     </li>
+			<li> Branding Identity          </li>
+		</ul>
+
+		<div id="tda-button">
+			<button> Explore Portfolio  </button>
+			<button> Become my employer </button>
+		</div>
+
+	</section>
+</div>
+
+<div class="tda-row">
+	<section id="tda-section-two">
+	  <h2 class="hidden"> Second section </h2>
+
+		<p> &#8220; Im dedicated to offer outstanding service &#8221; </p>
+
+		<ul>
+			<li> South African based but available for global markets  </li>
+			<li> Trust Index rating of 9.6 in development              </li>
+			<li> Fast and reliable support                             </li>
+		</ul>
+
+	</section>
+</div>
+
+```
+
+#### Load module content to _Index file iframe_
+Now, we are going to create a <span style="color: yellow;">JavaScript function</span> to handle two things:
++ Title of the active module.
++ Load module to iframe.  
+
+We want our <span style="color: yellow;">_title to dynamically changes_</span> to an active module. When the user access our landing page (Home.html), The _`title`_ of the page should be `" Home | Dakalo Tshikororo "`. Whenever a user navigate to another page such as about, the title of the page should be change to `" About | Dakalo Tshikororo "` etc.
+
+When a user click on the link of one of the following module `Home.html, About.html, Skills.html, Portfolio, and Contact.html` the module file must load dynamically to an `Index.html` file on iframe element using <span style="color: yellow;">JavaScript</span> by assigning new value of `src attribute`. This is how a requested module will load it's content on the web browser. `Home.html` will be set as a default whenever HTML document is loaded on the web browser.
+
++ [Pseudo code](#pseudo)
++ [Create a file named Main.js](#createmainjs)
++ [Main.js code](#mainjs)
+
+<a name="pseudo"></a>
+##### Pseudo code
+
+```
+Define variable called moduleName.
+Set/initialize the value of moduleName to undefined.
+Define a function called loadPageContent with parameter variable called value
+	 loadPageContent(value)
+
+Define three variables named:
+	iframe, current_page and loaded_page.
+
+Select iframe element from DOM (index.html) using querySelector methods passing a tag name as an argument.
+Set/initialize the value of currentPage to the parameter variable named value to get an argument.
+
+if the currentPage is set to undefined value
+	set document title to "Home | Dakalo Tshikororo".
+	set currentPage to "Home".
+	set loadedPage to "./" + currentPage + ".html".
+	set iframe attribute src to loadedPage.
+
+else currentPage is set to a defined value
+	set document title 	to value + " | Dakalo Tshikororo".
+  set loadedPage to "./" + currentPage + ".html".
+	set iframe attribute src to loadedPage.
+
+```
+
+<a name="createmainjs"></a>
+##### Create a file named Main.js
+```
+$ sudo touch main.js
+
+```
+
+<a name="mainjs"></a>
+##### Main.js code
+
+```js
+"use strict";
+
+// Define the parameter variable called moduleName.
+let moduleName;
+
+// Set/initialize moduleName to undefined.
+moduleName = undefined;
+
+// Define a function called loadPageContent with parameter variable called value
+function loadPageContent(value) {
+
+  // Define variables
+  let iframe;
+  let currentPage;
+  let loadedPage;
+
+  // Select iframe element from DOM passing a tag name as an argument.
+  iframe = document.querySelector("iframe");
+
+  // Set/initialize currentPage to argument.
+  currentPage = value;
+
+  if(currentPage == undefined){
+
+    /*  
+        If the currentPage is set to undefined value.
+        This is loaded as a default.
+                                      */
+      document.title  = "Home | Dakalo Tshikororo ";
+      currentPage     = "Home";
+      loadedPage      = "./" + currentPage + ".html";
+
+      iframe.setAttribute("src", loadedPage);
+
+	}else{ // if currentPage is set to a defined value
+
+      document.title = value + " | Dakalo Tshikororo ";
+      loadedPage     = "./" + currentPage + ".html";
+
+      iframe.setAttribute("src", loadedPage);
+
+	} // End of conditional statements
+
+}// End of function: loadPageContent(title);
+
+// Run this functions when the document is loaded
+window.onload = function()	{ // #01
+
+	loadPageContent(moduleName);
+
+}
+
+```
