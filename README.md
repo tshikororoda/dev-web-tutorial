@@ -1,12 +1,15 @@
 # Web Tutorial
 
-| NO |              TABLE OF CONTENTS                     |
-| ---| ---------------------------------------------------|
-| 01 | [ Project requirements ](#project-requirements)    |
-| 02 | [ Download and Install dev tools ](#dev-tools)     |
-| 03 | [ Let’s start with our development ](#lets-start)  |
-| 04 | [ GitHub - Control version ](#control-version)     |
-| 05 | [ Repository ](#repository)                        |
+| NO |              TABLE OF CONTENTS                             |
+| ---| -----------------------------------------------------------|
+| 01 | [ Project requirements ](#project-requirements)            |
+| 02 | [ Download and Install dev tools ](#dev-tools)             |
+| 03 | [ Let’s start with our development ](#lets-start)          |
+| 04 | [ GitHub - Control version ](#control-version)             |
+| 05 | [ Repository ](#repository)                                |
+| 06 | [ Home - Landing page ](#home-landing-page)                |
+| 07 | [ Split source code on _index.html_ ](split-source-code)   |
+| 08 | [ Moving _.html_ files to a local web server ](#webserver) |
 
 <a name="project-requirements"></a>
 ### Project requirements
@@ -16,6 +19,19 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 + You should also have some content placed within _`paragraph`_.
 + Your website must have at least one stylesheet file. The stylesheet(s) must use at least five different _`CSS properties`_, and at least five different types of _`CSS selectors`_. You must use the _`#id selector`_ at least once, and the _`.class selector`_ at least once.
 + •	All symbols should be implemented using `HTML entities`.
+
+***
+
+## What you need
+In this tutorial, I assume you have some experience on web development software, and preferably have at least a basic understanding of HTML4.0/5.
+
+#### Have the following tools
+
++ A `text editor` for writing code. Notepad++ is a good option for Windows, Text Wrangler is a good choice for Macs, And Emacs is a good choice for Linux. You may also choose to use an Integrated Development Environment (IDE).
+
++ `Web browser` _Chrome, Firefox, Internet explorer, Microsoft Edge, Safari, Opera etc_. If you choose to use Firefox: you will need to install the Firebug plugin to gain access to a full suite of development tools but there is nothing presented in this tutoria that does not work with _Firefox, IE10 or Safari_. I believe the developer tools in Chrome are now superior to those offered by other browsers, therefore if you are starting from scratch, I strongly recommend Chrome.
+
++ A `Web Server` This will only be required later in this tutorial, and I will explaining how to install and use the _Mongoose web server_. You may choose to use any other web server you like, but the instructions will only be provided for _Mongoose web server_.
 
 ***
 
@@ -194,7 +210,10 @@ $ git checkout home
 
 ```
 ***
+
+<a name="home-landing-page"></a>
 ### Home - Landing page
+
 + [ Add document Appropriate Skelton ](#das)
 + [ Sketching out our design ](#sketching)
 + [ Choosing our assets ](#choosing-your-assets)
@@ -227,6 +246,9 @@ The first thing we will do is to _sketch out the layout_ of our websites landing
 
 <a name="coding-landing-page"></a>
 #### Coding design layout
+`Layout content:` Web designers have been relying on the _&lt;div&gt;_ and _&lt;span&gt;_ elements to layout web content. they act as containers for other elements. These containers can then be `positioned anywhere` on the screen using _style sheets_.
+The Difference between _&lt;span&gt;_ and _&lt;div&gt;_ element. _&lt;span&gt;_ is inline level elements and _&lt;div&gt;_ is block level element.
+
 ```html
 
 <!--/@codewithtshikororoda
@@ -362,6 +384,7 @@ Here are some of the things validators ([ w3 Mark-up validation service](https:/
 _Results on browsers_
 ![layout design](./resources/results_rendered.PNG)
 
+<a name="split-source-code"></a>
 ## Split source code on index.html
 
 Now, we need to split source code that we wrote earlier on _`(Index.html)`_. To achieve this, we simply create a new file called _`Home.html`_, then we cut the main content of _`Index.html`_ file and then paste the content on `Home.html`. Header and footer will remain on _`index.html`_ file as shown below. We want to avoid duplication of code mainly _`header and footer`_ since they appear in each module.
@@ -539,7 +562,7 @@ When a user click on the link of one of the following module `Home.html, About.h
 
 + [Pseudo code](#pseudo)
 + [Create a file named Main.js](#createmainjs)
-+ [Main.js code](#mainjs)
++ [Controller.js code](#mainjs)
 
 <a name="pseudo"></a>
 ##### Pseudo code
@@ -570,14 +593,14 @@ else currentPage is set to a defined value
 ```
 
 <a name="createmainjs"></a>
-##### Create a file named Main.js
+##### Create a file named Controller.js
 ```
-$ sudo touch main.js
+$ sudo touch controller.js
 
 ```
 
 <a name="mainjs"></a>
-##### Main.js code
+##### Controller.js code
 
 ```js
 "use strict";
@@ -623,6 +646,11 @@ function loadPageContent(value) {
 
 	} // End of conditional statements
 
+// Add CSS
+  iframe.style.width  = "100%";
+  iframe.style.height = "400px";
+  iframe.style.border = "01px solid #f1f1f1";
+
 }// End of function: loadPageContent(title);
 
 // Run this functions when the document is loaded
@@ -633,3 +661,19 @@ window.onload = function()	{ // #01
 }
 
 ```
+
+## Moving _.html_ files to a local web server
+
+Up until this point we have been loading all our _.html_ page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [ _`Mongoose webserver`_](http://cesanta.com/). This is one of the smallest _minimal static HTTP server_ available that requires very minimal configuration.
+
+_Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8080 ](http://dev.personal:8080/) instead of using [ localhost:8080 ](http://localhost:8080/)._
+
+The _web browser_ uses the `domain name and port number` to determine the origin of a web page _(port number usually is 80 or 443 defaults – but in this case it will listin on 8080)._
+
+Before we run Mongoose, we first have to [ Download ](https://code.google.com/archive/p/mongoose/downloads) the _executable_ file. The platform we are using for our development will affect how we should run Mongoose local web server. Once this downloads is complete, and we're running local web server on Windows, let's perform the following steps:
++ Copy the _.exe_ downloaded file to the _same directory_ that contains _.html_ files that we want http to serve.
++ Double click on the _executable_ file to start Mongoose application. Mongoose application can now be _`configured via the icon in the taskbar at the bottom of the screen`_. However, no configuration is required so far.  
+
+_For Linux or OS X platforms, we will also need to have a copy of the downloaded file in the directory where our website files are located, but you have to start Mongoose from the command line._
+
+[ Open this should show the _`landing page`_ for our personal web site. ](http://localhost:8080/).
