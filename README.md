@@ -22,7 +22,7 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 
 ***
 
-## What you need
+## What we need
 In this tutorial, I assume you have some experience on web development software, and preferably have at least a basic understanding of HTML4.0/5.
 
 #### Have the following tools
@@ -389,7 +389,7 @@ _Results on browsers_
 
 Now, we need to split source code that we wrote earlier on _`(Index.html)`_. To achieve this, we simply create a new file called _`Home.html`_, then we cut the main content of _`Index.html`_ file and then paste the content on `Home.html`. Header and footer will remain on _`index.html`_ file as shown below. We want to avoid duplication of code mainly _`header and footer`_ since they appear in each module.
 
-+ [Entry point  of all module: Index.html](#index)
++ [Entry point  of all module: _Index.html_](#index)
 + [Module Home - Landing page](#home)
 
 <a name="index"></a>
@@ -443,11 +443,11 @@ This is the entry point of our website. We have now remove main content from _in
                 <div class="tda-float-right">
                     <nav>
                         <ul>
-                            <li> <a href="#" onclick="loadPageContent('Home');">      Home       </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('About');">     About      </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('Skills');">    Skills     </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('Portfolio');"> Portfolio  </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('Contact');">   Contact    </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('home');">      Home       </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('about');">     About      </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('skills');">    Skills     </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('portfolio');"> Portfolio  </a> </li>
+                            <li> <a href="#" onclick="loadPageContent('contact');">   Contact    </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -492,17 +492,17 @@ This is the entry point of our website. We have now remove main content from _in
 <a name="home"></a>
 #### Module Home - Landing page
 
-+ [Create a file called Home.html](#)
-+ [Home content](#)
++ [Create a file called _Home.html_](#)
++ [Add home page content](#)
 
 ###### Create a file called: Home.html
 
 ```
 
-$ sudo touch Home.html
+$ touch Home.html
 
 ```
-###### Home content
+###### Add home page content
 
 ```html
 
@@ -556,7 +556,7 @@ Now, we are going to create a <span style="color: yellow;">JavaScript function</
 + Title of the active module.
 + Load module to iframe.  
 
-We want our <span style="color: yellow;">_title to dynamically changes_</span> to an active module. When the user access our landing page (Home.html), The _`title`_ of the page should be `" Home | Dakalo Tshikororo "`. Whenever a user navigate to another page such as about, the title of the page should be change to `" About | Dakalo Tshikororo "` etc.
+We want our <span style="color: yellow;">_title to dynamically changes_</span> to an active module. When the user access our landing page _(Home.html)_, The _`title`_ of the page should be `" Home | Dakalo Tshikororo "`. Whenever a user navigate to another page such as about, the title of the page should be change to `" About | Dakalo Tshikororo "` etc.
 
 When a user click on the link of one of the following module `Home.html, About.html, Skills.html, Portfolio, and Contact.html` the module file must load dynamically to an `Index.html` file on iframe element using <span style="color: yellow;">JavaScript</span> by assigning new value of `src attribute`. This is how a requested module will load it's content on the web browser. `Home.html` will be set as a default whenever HTML document is loaded on the web browser.
 
@@ -595,7 +595,7 @@ else currentPage is set to a defined value
 <a name="createmainjs"></a>
 ##### Create a file named Controller.js
 ```
-$ sudo touch controller.js
+$ touch controller.js
 
 ```
 
@@ -639,7 +639,11 @@ function loadPageContent(value) {
 
 	}else{ // if currentPage is set to a defined value
 
-      document.title = value + " | Dakalo Tshikororo ";
+      // Enforce the first letter of the title of active page to be uppercase
+      let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
+
+     // Set title of the page loaded/active
+      document.title = title + " | Dakalo Tshikororo ";
       loadedPage     = "./" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
@@ -668,10 +672,10 @@ Up until this point we have been loading all our _.html_ page directly from the 
 
 _Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8080 ](http://dev.personal:8080/) instead of using [ localhost:8080 ](http://localhost:8080/)._
 
-The _web browser_ uses the `domain name and port number` to determine the origin of a web page _(port number usually is 80 or 443 defaults – but in this case it will listin on 8080)._
+The _web browser_ uses the _`domain name and port number`_ to determine the origin of a web page _(port number usually is 80 or 443 defaults – but in this case it will listin on 8080)._
 
 Before we run Mongoose, we first have to [ Download ](https://code.google.com/archive/p/mongoose/downloads) the _executable_ file. The platform we are using for our development will affect how we should run Mongoose local web server. Once this downloads is complete, and we're running local web server on Windows, let's perform the following steps:
-+ Copy the _.exe_ downloaded file to the _same directory_ that contains _.html_ files that we want http to serve.
++ Copy the _`.exe`_ downloaded file to the _same directory_ that contains _`.html`_ files that we want http to serve.
 + Double click on the _executable_ file to start Mongoose application. Mongoose application can now be _`configured via the icon in the taskbar at the bottom of the screen`_. However, no configuration is required so far.  
 
 _For Linux or OS X platforms, we will also need to have a copy of the downloaded file in the directory where our website files are located, but you have to start Mongoose from the command line._
