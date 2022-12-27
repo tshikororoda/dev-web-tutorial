@@ -34,6 +34,10 @@ function loadPageContent(value) {
 
 	}else{ // if currentPage is set to a defined value
 
+      // Enforce the first letter of the title of active page to be uppercase
+      let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
+
+      // Set title of the page loaded/active
       document.title = value + " | Dakalo Tshikororo ";
       loadedPage     = "./" + currentPage + ".html";
 
