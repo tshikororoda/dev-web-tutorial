@@ -17,17 +17,17 @@ function loadPageContent(value) {
   // Select iframe element from DOM passing a tag name as an argument.
   iframe = document.querySelector("iframe");
 
-  // Set/initialize currentPage to argument.
-  currentPage = value;
-
-  if(currentPage == undefined){
+  if(value == undefined){
 
     /*
         If the currentPage is set to undefined value.
         This is loaded as a default.
                                       */
-      document.title  = "Home | Dakalo Tshikororo ";
-      currentPage     = "Home";
+      let value = "home"; // default value
+      let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
+
+      document.title  = title + " | Dakalo Tshikororo ";
+      currentPage     = value;
       loadedPage      = "./" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
@@ -39,6 +39,7 @@ function loadPageContent(value) {
 
       // Set title of the page loaded/active
       document.title = value + " | Dakalo Tshikororo ";
+      currentPage    = value;
       loadedPage     = "./" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);

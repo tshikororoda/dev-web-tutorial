@@ -37,9 +37,11 @@ In this tutorial, I assume you have some experience on web development software,
 
 <a name="dev-tools"></a>
 ### Download and Install dev tools
-+ Version control [GIT](https://git-scm.com/download/win)
-+ Text editor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : [Notepad++](https://notepad-plus-plus.org/downloads/) , [VS Code](https://code.visualstudio.com/) , [Atom](https://atom.io/)
-+ Web browsers&nbsp;: [Chrome](https://www.google.com/chrome/) , [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+| Dev tools       | Download                                                   |
+| --------------- | ---------------------------------------------------------- |
+| Version control | [GIT](https://git-scm.com/download/win)                    |
+| Text editor     | [Notepad++](https://notepad-plus-plus.org/downloads/) , [VS Code](https://code.visualstudio.com/) , [Atom](https://atom.io/) |
+| Web browsers    | [Chrome](https://www.google.com/chrome/) , [Firefox](https://www.mozilla.org/en-US/firefox/new/) |
 
 ***
 
@@ -622,17 +624,18 @@ function loadPageContent(value) {
   // Select iframe element from DOM passing a tag name as an argument.
   iframe = document.querySelector("iframe");
 
-  // Set/initialize currentPage to argument.
-  currentPage = value;
-
-  if(currentPage == undefined){
+  if(value == undefined){
 
     /*  
         If the currentPage is set to undefined value.
         This is loaded as a default.
                                       */
-      document.title  = "Home | Dakalo Tshikororo ";
-      currentPage     = "Home";
+
+      let value = "home"; // default value
+      let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
+
+      document.title  = title + " | Dakalo Tshikororo ";
+      currentPage     = value;
       loadedPage      = "./" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
@@ -644,6 +647,7 @@ function loadPageContent(value) {
 
      // Set title of the page loaded/active
       document.title = title + " | Dakalo Tshikororo ";
+      currentPage    = value;
       loadedPage     = "./" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
