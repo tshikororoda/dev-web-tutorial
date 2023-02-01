@@ -8,7 +8,7 @@
 | 04 | [ GitHub - Control version ](#control-version)             |
 | 05 | [ Repository ](#repository)                                |
 | 06 | [ Home - Landing page ](#home-landing-page)                |
-| 07 | [ Split source code on _index.html_ ](split-source-code)   |
+| 07 | [ Split source code on _index.html_ ](#split-source-code)   |
 | 08 | [ Moving _.html_ files to a local web server ](#webserver) |
 
 <a name="project-requirements"></a>
@@ -18,7 +18,7 @@ Alright, now it’s time to make your own _personal website_. Design a personal 
 + Your website must include at least one _`list (ordered or unordered)`_, at least one _`table`_, and at least one _`image`_.
 + You should also have some content placed within _`paragraph`_.
 + Your website must have at least one stylesheet file. The stylesheet(s) must use at least five different _`CSS properties`_, and at least five different types of _`CSS selectors`_. You must use the _`#id selector`_ at least once, and the _`.class selector`_ at least once.
-+ •	All symbols should be implemented using `HTML entities`.
++ All symbols should be implemented using `HTML entities`.
 
 ***
 
@@ -621,6 +621,9 @@ function loadPageContent(value) {
   let currentPage;
   let loadedPage;
 
+  // Define constant variables
+	const myName = "Dakalo Tshikororo";
+
   // Select iframe element from DOM passing a tag name as an argument.
   iframe = document.querySelector("iframe");
 
@@ -634,7 +637,8 @@ function loadPageContent(value) {
       let value = "home"; // default value
       let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
 
-      document.title  = title + " | Dakalo Tshikororo ";
+      document.title  = title + " | " + myName;
+
       currentPage     = value;
       loadedPage      = "./" + currentPage + ".html";
 
@@ -646,7 +650,8 @@ function loadPageContent(value) {
       let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
 
      // Set title of the page loaded/active
-      document.title = title + " | Dakalo Tshikororo ";
+      document.title = title + " | " + myName;
+
       currentPage    = value;
       loadedPage     = "./" + currentPage + ".html";
 
@@ -670,6 +675,7 @@ window.onload = function()	{ // #01
 
 ```
 
+<a name="webserver"></a>
 ## Moving _.html_ files to a local web server
 
 Up until this point we have been loading all our _.html_ page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [ _`Mongoose webserver`_](http://cesanta.com/). This is one of the smallest _minimal static HTTP server_ available that requires very minimal configuration.

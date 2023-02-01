@@ -14,6 +14,9 @@ function loadPageContent(value) {
   let currentPage;
   let loadedPage;
 
+  // Define constant variables
+	const myName = "Dakalo Tshikororo";
+
   // Select iframe element from DOM passing a tag name as an argument.
   iframe = document.querySelector("iframe");
 
@@ -26,7 +29,8 @@ function loadPageContent(value) {
       let value = "home"; // default value
       let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
 
-      document.title  = title + " | Dakalo Tshikororo ";
+      document.title  = title + " | " + myName;
+
       currentPage     = value;
       loadedPage      = "./" + currentPage + ".html";
 
@@ -38,7 +42,8 @@ function loadPageContent(value) {
       let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
 
       // Set title of the page loaded/active
-      document.title = value + " | Dakalo Tshikororo ";
+      document.title = value + " | " + myName;
+
       currentPage    = value;
       loadedPage     = "./" + currentPage + ".html";
 
