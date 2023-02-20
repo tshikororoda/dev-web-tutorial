@@ -32,7 +32,7 @@ function LoadModuleContent(value) {
       document.title  = title + " | " + myName;
 
       currentPage     = value;
-      loadedPage      = "./" + currentPage + ".html";
+      loadedPage      = "./content/" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
 
@@ -45,7 +45,7 @@ function LoadModuleContent(value) {
       document.title = value + " | " + myName;
 
       currentPage    = value;
-      loadedPage     = "./" + currentPage + ".html";
+      loadedPage     = "./content/" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
 

@@ -445,11 +445,11 @@ This is the entry point of our website. We have now remove main content from _in
                 <div class="tda-float-right">
                     <nav>
                         <ul>
-                            <li> <a href="#" onclick="loadPageContent('home');">      Home       </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('about');">     About      </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('skills');">    Skills     </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('portfolio');"> Portfolio  </a> </li>
-                            <li> <a href="#" onclick="loadPageContent('contact');">   Contact    </a> </li>
+                            <li> <a href="#" onclick="loadModuleContent('home');">      Home       </a> </li>
+                            <li> <a href="#" onclick="loadModuleContent('about');">     About      </a> </li>
+                            <li> <a href="#" onclick="loadModuleContent('skills');">    Skills     </a> </li>
+                            <li> <a href="#" onclick="loadModuleContent('portfolio');"> Portfolio  </a> </li>
+                            <li> <a href="#" onclick="loadModuleContent('contact');">   Contact    </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -553,27 +553,32 @@ $ touch Home.html
 
 ```
 
-#### Load module content to _Index file iframe_
-Now, we are going to create a <span style="color: yellow;">JavaScript function</span> to handle two things:
-+ Title of the active module.
-+ Load module to iframe.  
+#### Load module content to _Index file_
+Now, we are going to create a <span style="font-weight: bold;">JavaScript function</span> to handle two things:
++ Change _document title_ to the active module.
++ Load module to _iframe_ element form HTML document.
++ Load module to _main_ element form XML document.
 
-We want our <span style="color: yellow;">_title to dynamically changes_</span> to an active module. When the user access our landing page _(Home.html)_, The _`title`_ of the page should be `" Home | Dakalo Tshikororo "`. Whenever a user navigate to another page such as about, the title of the page should be change to `" About | Dakalo Tshikororo "` etc.
+We want our <span style="font-weight: bold;">_title to dynamically changes_</span> to an active module. When the user access our landing page _(Home.html)_, The _`title`_ of the page should be `" Home | Dakalo Tshikororo "`. Whenever a user navigate to another page such as about, the title of the page should be change to `" About | Dakalo Tshikororo "` etc.
 
-When a user click on the link of one of the following module `Home.html, About.html, Skills.html, Portfolio, and Contact.html` the module file must load dynamically to an `Index.html` file on iframe element using <span style="color: yellow;">JavaScript</span> by assigning new value of `src attribute`. This is how a requested module will load it's content on the web browser. `Home.html` will be set as a default whenever HTML document is loaded on the web browser.
+When a user _click_ on the _link_ of one of the following module _`Home.html, About.html, Skills.html, Portfolio.html, and Contact.html`_ the module file must load dynamically to an `Index.html` file on _iframe_ element using <span style="font-weight: bold;">JavaScript</span> by assigning new value of `src attribute`. This is how a requested module will load it's content on the web browser. _`Home.html`_ will be set as a default whenever HTML document is loaded on the web browser.
 
-+ [Pseudo code](#pseudo)
-+ [Create a file named Main.js](#createmainjs)
-+ [Controller.js code](#mainjs)
+##### 1. Load module into _iframe_ form HTML document
 
-<a name="pseudo"></a>
+An inline _`iframe`_ is HTML element that loads another document within the another document. Using an _`iframe`_ for `dynamic content` is simple and effective, but it is becoming less popular these days. _New methods of creating dynamic web content using dynamic `HTML and AJAX` are now more common. Such methods can create more interactive and integrated sites than using an `iframe` to load another static page._ When the web browser encounters an _`iframe`_ element, `it creates a new document environment to load the document`. It loads the document from the referenced _`src or srcdoc`._
+
++ [Pseudo code](#pseudojshtml)
++ [Create a file named Controller-html.js](#createcontrollerhtmljs)
++ [Controller-html.js code](#codecontrollerhtmljs)
+
+<a name="pseudojshtml"></a>
 ##### Pseudo code
 
 ```
 Define variable called moduleName.
 Set/initialize the value of moduleName to undefined.
-Define a function called loadPageContent with parameter variable called value
-	 loadPageContent(value)
+Define a function called loadModuleContent with parameter variable called value
+	 loadModuleContent(value)
 
 Define three variables named:
 	iframe, current_page and loaded_page.
@@ -594,15 +599,15 @@ else currentPage is set to a defined value
 
 ```
 
-<a name="createmainjs"></a>
-##### Create a file named Controller.js
+<a name="createcontrollerhtmljs"></a>
+##### Create a file named Controller-html.js
 ```
-$ touch controller.js
+$ touch controller-html.js
 
 ```
 
-<a name="mainjs"></a>
-##### Controller.js code
+<a name="codecontrollerhtmljs"></a>
+##### Controller-html.js code
 
 ```js
 "use strict";
@@ -614,7 +619,7 @@ let moduleName;
 moduleName = undefined;
 
 // Define a function called loadPageContent with parameter variable called value
-function loadPageContent(value) {
+function loadModuleContent(value) {
 
   // Define variables
   let iframe;
@@ -640,7 +645,7 @@ function loadPageContent(value) {
       document.title  = title + " | " + myName;
 
       currentPage     = value;
-      loadedPage      = "./" + currentPage + ".html";
+      loadedPage      = "./content/" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
 
@@ -653,7 +658,7 @@ function loadPageContent(value) {
       document.title = title + " | " + myName;
 
       currentPage    = value;
-      loadedPage     = "./" + currentPage + ".html";
+      loadedPage     = "./content/" + currentPage + ".html";
 
       iframe.setAttribute("src", loadedPage);
 
@@ -675,19 +680,189 @@ window.onload = function()	{ // #01
 
 ```
 
+##### 2. Load module into _main_ form XML document
+
+When a user _click_ on the _link_ of one of the following module _`Home, About, Skills, Portfolio, and Contact`_ the module _xml file_ must load dynamically to an _`Index.html`_ file on _main element_ using <span style="font-weight: bold;">AJAX</span> which perform HTTP request and response. AJAX require HTTP server to execute successfully. [_Refer to the section below for setting up HTTP server._](#"webserver) This way module content will be loaded on the web browser and _`Home.xml`_ will be set as _default module or landing page_ when HTML document is loaded on the web browser. This is methods that are prefer to use.
+
++ [Pseudo code](#pseudojsxml)
++ [Create a file named Controller-xml.js](#createcontrollerxmljs)
++ [Controller-xml.js code](#codecontrollerxmljs)
+
+<a name="pseudojsxml"></a>
+##### Pseudo code
+
+```txt
+
+	Define variable called moduleName.
+	Set/initialize the value of moduleName to undefined.
+	Define a function called loadModuleContent with parameter variable called xmlFileName.
+		loadModuleContent(value)
+			Create an XMLHttpRequest object asigned on xhttp variable:
+				xhttp = new XMLHttpRequest()   
+
+			Define a callback function:			
+			xhttp.onload = function() {
+				// What to do when the response is ready
+			}
+
+			Define constant variables called myName with "Dakalo Tshikororo" string assigned to it.
+
+			if the xmlFileName is set to undefined value
+				Define and set xmlFileName to "Home".
+				Define and set title to: xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
+				Set document.title to title and myName.
+				Send a request to a server if xmlFileName undefined.
+					xhttp.open("GET", xmlFileName + ".xml")
+					xhttp.send()
+
+			else the xmlFileName is set to defined value
+				Define and set title to: xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
+				Set document.title to title and myName.
+				Send a request to a server if xmlFileName defined.
+					xhttp.open("GET", xmlFileName + ".xml")
+					xhttp.send()
+
+	Define the function called displayModuleContent with xml as a parameter to be executed when the response is ready.
+		displayModuleContent(xml)
+			Define the constant variable called content response as an XML DOM
+
+```
+
+<a name="createcontrollerxmljs"></a>
+##### Create a file named Controller-xml.js
+```
+$ touch controller-xml.js
+
+```
+
+<a name="codecontrollerxmljs"></a>
+##### Controller-xml.js code
+
+```js
+"use strict";
+
+// Define the parameter variable called moduleName.
+let moduleName;
+
+// Set/initialize moduleName to undefined.
+moduleName = undefined;
+
+// Define a function called loadModuleContent with parameter variable called xmlFileName
+
+function loadModuleContent(xmlFileName) {
+
+	// Create an XMLHttpRequest object
+	const xhttp = new XMLHttpRequest();
+
+	// Define a callback function
+	xhttp.onload = function() {
+
+		displayModuleContent(this);
+	}
+
+	// Define constant variables
+	const myName = "Dakalo Tshikororo";
+
+	if(xmlFileName == undefined){
+
+		/*  
+		 * @ If the xmlFileName is set to undefined value.
+		 * @ This is loaded as a default.
+		 *
+		 ***************************************************************/
+
+
+		let xmlFileName = "home"; // default value
+		let title 		= xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
+
+		// Set title of the page loaded/active
+		document.title  = title + " | " + myName;
+
+		// Send a request to a server if xmlFileName undefined
+		xhttp.open("GET", "./content/" + xmlFileName + ".xml");
+		xhttp.send();
+
+	}else{
+
+		/*
+		 *
+		 * Enforce the first letter of the title of active page to be uppercase
+		 *
+		 ***********************************************************************/
+
+		let title = xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
+
+		// Set title of the page loaded/active
+		document.title = title + " | " + myName;
+
+		// Send a request to a server if xmlFileName is define
+		xhttp.open("GET", "./content/" + xmlFileName + ".xml");
+		xhttp.send();
+	}
+
+}
+
+// Run this functions when the document is loaded
+window.onload = function()	{
+
+	loadModuleContent(moduleName);
+
+}
+
+// Define the function to be executed when the response is ready
+function displayModuleContent(xml) {
+
+  // Define the constant variable called xmlDom to get response as an XML DOM
+  const xmlDom = xml.responseXML;
+
+  // Define constant variable called module to select a child of root element form XML DOM  
+  const module = xmlDom.getElementsByTagName("MODULE");
+
+  //
+  let content =	"";
+
+  // Loop
+  for (let i = 0; i <module.length; i++) {
+
+	// Select a childNodes element module element.
+    content += module[i].getElementsByTagName("DATA")[0].childNodes[0].nodeValue;
+  }
+
+  // Load/insert content on main element
+  document.getElementById("mainContent").innerHTML = content;
+}
+
+```
+
 <a name="webserver"></a>
-## Moving _.html_ files to a local web server
+## Moving our project files _(.html / .xml)_ to a local web server
 
-Up until this point we have been loading all our _.html_ page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [ _`Mongoose webserver`_](http://cesanta.com/). This is one of the smallest _minimal static HTTP server_ available that requires very minimal configuration.
+Up until this point we have been loading all our _.html_ page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [ _`Mongoose webserver`_](https://mongoose.ws/tutorials/tools/). This is one of the smallest _minimal static HTTP server_ available that requires very minimal configuration.
 
-_Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8080 ](http://dev.personal:8080/) instead of using [ localhost:8080 ](http://localhost:8080/)._
+_Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8000 ](http://dev.personal:8000/) instead of using [ localhost:8000 ](http://localhost:8000/)._
 
-The _web browser_ uses the _`domain name and port number`_ to determine the origin of a web page _(port number usually is 80 or 443 defaults – but in this case it will listin on 8080)._
+_The web browser uses the `domain name and port number` to determine the origin of a web page (port number usually is 80 or 443 defaults – but in this case it will listen on 8000)._
 
-Before we run Mongoose, we first have to [ Download ](https://code.google.com/archive/p/mongoose/downloads) the _executable_ file. The platform we are using for our development will affect how we should run Mongoose local web server. Once this downloads is complete, and we're running local web server on Windows, let's perform the following steps:
-+ Copy the _`.exe`_ downloaded file to the _same directory_ that contains _`.html`_ files that we want http to serve.
-+ Double click on the _executable_ file to start Mongoose application. Mongoose application can now be _`configured via the icon in the taskbar at the bottom of the screen`_. However, no configuration is required so far.  
+To _run_ mongoose HTTP server to serve our web pages:
 
-_For Linux or OS X platforms, we will also need to have a copy of the downloaded file in the directory where our website files are located, but you have to start Mongoose from the command line._
++ Download and install [`GCC / MinGW compiler`](#)
+  + Set install destination to c:\
+  + Accept suggested default settings.
+  + Go to `c:\mingw32\bin` folder and rename `mingw32-make.exe` to `make.exe`.
+  + Add `c:\mingw32\bin` to the Path environment variable.
 
-[ Open this should show the _`landing page`_ for our personal web site. ](http://localhost:8080/).
+
+  ```
+  gcc --version
+
+  ```
++ Build and run mongoose _http-server_
+
+```
+  git clone https://github.com/cesanta/mongoose
+  cd mongoose/examples/http-server
+  make mingw
+
+```
+
+[ _Go to http://localhost:8000 in your browser._ ](http://localhost:8000/)
