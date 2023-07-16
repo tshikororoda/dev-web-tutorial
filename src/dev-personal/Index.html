@@ -1,0 +1,74 @@
+
+<style>
+a {
+
+border: 1px black solid;
+font-size: 50px;
+}
+</style>
+
+<a data-nav="HOME">Home</a>
+<a data-nav="about">About</a>
+<a data-nav="skills">Skills</a>
+<a data-nav="portfolio">portfolio</a>
+
+<!--
+	
+	How it works.
+
+
+Next, define an array of three numbers. Home
+Then, declare a variable sum and assign it a value of zero.
+After that, call the forEach() method on the numbers array. In the callback function, add the element to the sum variable and call the increase() method of the counter object. Notice that the counter object is referred to as this inside the callback function.
+Finally, log the value of the sum and current value of the counter in the web console.
+In this tutorial, you have learned how to use the JavaScript Array forEach() method to execute a callback on every element of an array.
+
+
+
+-->
+
+
+
+<main></main>
+<script>
+
+	document.addEventListener('DOMContentLoaded', () => {
+	
+				const 	main				= document.querySelector('main')
+		const 	HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
+		
+		const 	iframe 				= document.createElement("iframe")
+		
+		HTMLDocumentModules.forEach( HTMLDocumentModule => {	
+			HTMLDocumentModule.onclick = () => {
+			
+				let	moduleName		= HTMLDocumentModule.dataset.nav
+				let	documentTitle	= moduleName.charAt(0).toUpperCase() +
+										moduleName.slice(1 , moduleName.length).toLowerCase()
+				const fileExtension =  ".html"
+				const path 			= "./modules/" + documentTitle + fileExtension
+				
+					iframe.setAttribute("src", path)
+					iframe.setAttribute("id", "frame")
+					iframe.setAttribute("title", moduleName)
+					
+					// Set clicked module custom data to document title
+					document.title 					= documentTitle
+					HTMLDocumentModule.style.color	= "red"
+					
+					var iframeID = document.getElementById("frame");
+					var iframeCW = (iframeID.contentWindow || iframeID.contentDocument);
+ 
+					if (iframeCW.document) iframeCW = iframeCW.document;
+						iframeCW.body.style.border = "5px solid red";
+						iframeCW.body.style.color = "red"
+			}
+		})		
+					iframe.style.width  = "100%"
+					iframe.style.height = "400px"
+					//iframe.style.border = "01px solid #f1f1f1"
+					main.append(iframe)
+	})
+	
+</script>
+

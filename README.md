@@ -1,298 +1,357 @@
-# Web Tutorial
+v# Web Tutorial
 
-| NO |              TABLE OF CONTENTS                             |
-| ---| -----------------------------------------------------------|
-| 01 | [ Project requirements ](#project-requirements)            |
-| 02 | [ Download and Install dev tools ](#dev-tools)             |
-| 03 | [ Let’s start with our development ](#lets-start)          |
-| 04 | [ GitHub - Control version ](#control-version)             |
-| 05 | [ Repository ](#repository)                                |
-| 06 | [ Home - Landing page ](#home-landing-page)                |
-| 07 | [ Split source code on _index.html_ ](#split-source-code)   |
-| 08 | [ Moving _.html_ files to a local web server ](#webserver) |
+#### /> Table of contents
++ 01 ][ Project requirements ](#projectrequirements)
++ 02 ][ Download and Install dev tools ](#devtools)
++ 03 ][ Let’s start with our development ](#letsstart)
++ 04 ][ Git - control version ](#controlversion)            
++ 05 ][ Repository ](#repository)
++ 06 ][ Home - Landing page ](#homelandingpage)
++ 07 ][ Moving *.html* files to a local web server ](#webserver)
++ 08 ][ Split source code on *index.html* ](#splitsourcecode)
++ 09 ][ Load module mark-up to entry point](#entrypointLoadmodule)
 
-<a name="project-requirements"></a>
-### Project requirements
-Alright, now it’s time to make your own _personal website_. Design a personal webpage about yourself. The project should be subject to the following Specification:
-+ Your website must contain at least four different _`pages`_, and it should be possible to get from any page on your website to any other page by following one or more _`hyperlinks`_.
-+ Your website must include at least one _`list (ordered or unordered)`_, at least one _`table`_, and at least one _`image`_.
-+ You should also have some content placed within _`paragraph`_.
-+ Your website must have at least one stylesheet file. The stylesheet(s) must use at least five different _`CSS properties`_, and at least five different types of _`CSS selectors`_. You must use the _`#id selector`_ at least once, and the _`.class selector`_ at least once.
+<a name="projectrequirements"></a>
+#### /> Project requirements
+*Alright,* now it’s time to make our own *personal website*. Design a personal webpage about ourselves. The project should be subject to the following `specification:`
+
++ Our website must contain at least four different `pages`, and it should be possible to get from any page on your website to any other page by following one or more `hyperlinks`.
++ Our website must include at least one `list (ordered or unordered)`, at least one `table`, and at least one `image`.
++ Our should also have some content placed within `paragraph`.
++ Your website must have at least one stylesheet file. The stylesheet(s) must use at least five different `CSS properties`, and at least five different types of `CSS selectors`. You must use the `#id selector` at least once, and the `.class selector` at least once.
 + All symbols should be implemented using `HTML entities`.
 
-***
+#### /> What we need
+In this tutorial, I assume we have some experience on web development software, and preferably have at least a basic understanding of HTML4.0/5 and vanilla JavaScript.
 
-## What we need
-In this tutorial, I assume you have some experience on web development software, and preferably have at least a basic understanding of HTML4.0/5.
-
-#### Have the following tools
+##### Have the following tools
 
 + A `text editor` for writing code. Notepad++ is a good option for Windows, Text Wrangler is a good choice for Macs, And Emacs is a good choice for Linux. You may also choose to use an Integrated Development Environment (IDE).
 
-+ `Web browser` _Chrome, Firefox, Internet explorer, Microsoft Edge, Safari, Opera etc_. If you choose to use Firefox: you will need to install the Firebug plugin to gain access to a full suite of development tools but there is nothing presented in this tutoria that does not work with _Firefox, IE10 or Safari_. I believe the developer tools in Chrome are now superior to those offered by other browsers, therefore if you are starting from scratch, I strongly recommend Chrome.
++ `Web browser` *Chrome, Firefox, Internet explorer, Microsoft Edge, Safari, Opera etc*. If you choose to use Firefox: you will need to install the Firebug plugin to gain access to a full suite of development tools but there is nothing presented in this tutorial that does not work with *Firefox, IE10 or Safari*. I believe the developer tools in Chrome are now superior to those offered by other browsers, therefore if you are starting from scratch, I strongly recommend Chrome.
 
-+ A `Web Server` This will only be required later in this tutorial, and I will explaining how to install and use the _Mongoose web server_. You may choose to use any other web server you like, but the instructions will only be provided for _Mongoose web server_.
++ A `Web Server` This will only be required later in this tutorial, and I will explaining how to install and use the *Mongoose web server*. You may choose to use any other web server you like, but the instructions will only be provided for *Mongoose web server*.
 
+*` Last modified: 2023-07-08 time: 19:02PM `*
 ***
 
-<a name="dev-tools"></a>
-### Download and Install dev tools
-| Dev tools       | Download                                                   |
-| --------------- | ---------------------------------------------------------- |
-| Version control | [GIT](https://git-scm.com/download/win)                    |
-| Text editor     | [Notepad++](https://notepad-plus-plus.org/downloads/) , [VS Code](https://code.visualstudio.com/) , [Atom](https://atom.io/) |
-| Web browsers    | [Chrome](https://www.google.com/chrome/) , [Firefox](https://www.mozilla.org/en-US/firefox/new/) |
+<a name="devtools"></a>
+#### /> Download and install dev tools
+  Dev tools        | Download
+ ----------------- | ------------------------------------------------------
+ *Version control* | [Git](https://git-scm.com/download/win)
+ *Text editor*     | [Notepad++](https://notepad-plus-plus.org/downloads/)
+ *Web browsers*    | [Chrome](https://www.google.com/chrome/)
 
-***
+*` Last modified: 2023-07-08 time: 19:02PM `*
 
-<a name="lets-start"></a>
-### Let’s start with our development
-Let's start by creating a _website directory on `c driver`_ for storing all our personal website files. This is where all our website projects will live. We will be working on _`Git Bash terminal`_ to create our _personal website directory_. Now, open your _Git bash terminal_, then click inside _terminal_ after it has open, and then _type_ the following command: _`cd c:/`_ followed by an _`Enter`_.
+<a name="letsstart"></a>
+### /> Let’s start with our development
+Let's start by creating a *website directory on `c driver`* for storing all our personal website files. This is where all our website projects will live. We will be working on `Git Bash terminal` to create our *personal website directory*. Now, open your *Git bash terminal*, then click inside *terminal* after it has open, and then *type* the following command: *`cd c:/`* followed by an *`Enter`*.
 
-+ _`Change directory to move to c drive`._
+*`Change directory to move to c drive`.*
 
-      $ cd c:/
+``` sh
 
-    _From here on out, to execute (i.e., run) a command means to type it into a git bash terminal and then hit Enter. Commands are “case-sensitive,” so be sure not to type in uppercase when you mean lowercase or vice versa._
+cd c:/
 
-+ _`Create a new directory called workspace on c drive`_. _Now, execute command below:_
+```
 
-      $ mkdir workspace
+*From here on out, to execute (i.e., run) a command means to type it into a git bash terminal and then hit Enter. Commands are “case-sensitive,” so be sure not to type in uppercase when you mean lowercase or vice versa.*
 
-    _To move yourself into (i.e., open) that directory. Our prompt should now resemble the below. Now, execute command below:_
+*`Create a new directory called workspace on c drive`. Now, execute command below:*
 
-      $ cd workspace
+``` sh
 
-+ _`Create a new directory called dev-personal-site`. Now, execute command below:_
+mkdir workspace
 
-      $ mkdir dev-personal-site
+```
 
-    _To move yourself into (i.e., open) that directory. Our prompt should now resemble the command below. Now, execute command below:_
+*To move yourself into (i.e., open) that directory. Our prompt should now resemble the below. Now, execute command below:*
 
-      $ cd dev-personal-site
+``` sh
 
-:clap: We have successfully created _root directory_ of our _personal website_. <br />
-Below is the list of _command we have used_:
+cd workspace
+
+```
+
+*`Create a new directory called dev-personal`. Now, execute command below:*
+
+``` sh
+
+mkdir dev-personal
+
+```
+*To move yourself into (i.e., open) that directory. Our prompt should now resemble the command below. Now, execute command below:*
+
+``` sh
+
+cd dev-personal
+
+```
+
+*:clap: We have successfully created root directory of our personal website*.
+
+Below is the list of *command we have used*:
 
 | Command | Description                  |
-| ------- | ---------------------------- |
-| _cd_    | _Change directory._          |
-| _mkdir_ | _To create a new directory._ |
+ -------- | -----------------------------
+  _cd_    | _Change directory._
+  _mkdir_ | _To create a new directory._
 
+*` Last modified: 2023-07-08 time: 19:02PM `*
 ***
 
-<a name="control-version"></a>
-### GitHub - Control version
-GitHub is a _code hosting platform for version control and collaboration_. It lets us and others work together on projects from anywhere. At first, we will look at GitHub essentials: _repositories, branches, commits, and pull requests_. Since we have already created our development environment directory called _dev-personal-site directory_, we’ll make it a _repository_ and learn GitHub's _pull request_ workflow which is a popular way to create and review code.
+<a name="controlversion"></a>
+### /> Git - control version
+
+GitHub is a *code hosting platform for version control and collaboration*. It lets us and others work together on projects from anywhere. At first, we will look at git essentials: *repositories, branches, commits, and pull requests*. Since we have already created our development environment directory called *dev-personal directory*, we’ll make it a *repository* and learn GitHub's *pull request* workflow which is a popular way to create and review code.
 
 <a name="repository"></a>
-### Repository
-+ [ Create a file called `README.md`. ](#create-file)
-+ [ Make _`dev-personal-site`_ directory a Git Repository ](#git-repository)
-+ [ Project directory Structure ](#project-directory-structure)
+### /> `Git:` repository
+
++ [ Create a file called `README.md`. ](#createfile)
++ [ Make *`dev-personal`* directory a Git Repository ](#gitrepository)
++ [ Project directory Structure ](#projectdirectorystructure)
 
 <a name="create-file"></a>
-#### Create a file called _`README.md`_.
-We can create files from _git bash terminal_ in two ways. The first way is to use _**touch command**_ and the other way is to use _**echo command**_. If you want to write any specific data in the file, then use _**echo command**_. If you are not bothered about the data in the file but just want to create a file, then you can use _**touch command**_. <br />
-_Now, execute the command below_:
+##### /> Create a file called *`README.md`*.
+
+We can create files from *`git-bash terminal`* in two ways. The first way is to use *`touch command`*. *and the other way is to use `echo command`*. If you want to write any specific data in the file, then use `echo command`. If you are not bothered about the data in the file but just want to create a blank file, then you can use *touch command*.
+
+*Now, execute the command below:*
+
+``` sh
+
+echo "# My personal website " > README.md
+ls
 
 ```
-$ echo "# Personal website root directory " > README.md
-$ ls
 
-```
-
-Below is the list of command we have used:
+*Below is the list of command we have used:*
 
 | Command | Description                       |                 |
 | ------- | ----------------------------------| --------------- |
-| _ls_	  | To know what is on the directory  |                 |
-| _cat_	  | To create a file with content	    | cat > filename  |
-| _touch_ |	To create a file without content  | touch filename  |
-| _fsutil_|	To create a file of specific size |                 |
+  *ls*    | To know what is on the directory  |
+  *cat*   | To create a file with content	    | cat > filename
+  *touch* |	To create a file without content  | touch filename
+  *fsutil*|	To create a file of specific size |
 
-<a name="git-repository"></a>
-#### Make _`dev-personal-site`_ directory a Git Repository
+<a name="gitrepository"></a>
+##### /> Make *`dev-personal`* directory a git repository
 
-````
-$ git init
+``` sh
 
-````
+git init
 
-The _`git init command`_ will Initialize _dev-personal-site directory_ to an empty _Git repository in C:/workspace/dev-personal-site/.git/._
+```
+
+*The `git init` command will Initialize dev-personal directory to an `empty git repository in C:/workspace/dev-personal/.git/`*.
+
+*:clap: We have successfully initialize root directory of our personal website project* to be git repository.*
+
+*` Last modified: 2023-07-08 time: 18:49PM `*
 
 ***
 
-<a name="project-directory-structure"></a>
-### Project directory Structure
-+ [ Create the `sub-directory` folder ](#sub-directory)
-+ [ List of modules ](#website-modules)
-+ [ Create version file ](#create-version-file)
-+ [ Creating a new branch ](#creating-a-new-branch)
-+ [ Basic branching and merging ](#basic-branching-and-merging)
-+ [ Switching branches ](#switching-branches)
+<a name="projectdirectorystructure"></a>
+### /> Project directory structure
 
-#### Create the `sub-directory` folder
-Now, let’s create the _subdirectory_ folder using _Git bash terminal_. For creating subfolder called _`assets`_. assets directory is a subdirectory of _`dev-personal-site`_ directory. Inside _assets_ directory we will create subdirectory of assets called _css, js and img_ as shown above. <br />
-_Now, execute the command below_:
++ [ Create the `sub-directory` folder ](#subdirectory)
++ [ List of modules ](#websitemodules)
++ [ Create version file ](#createversionfile)
++ [ Creating a new branch ](#creatinganewbranch)
++ [ Basic branching and merging ](#basicbranchingandmerging)
+
+<a name="subdirectory"></a>
+#### /> Create the `sub-directory` folder
+
+*Now,* let’s create the *sub-directory* folder using *git bash terminal*. For creating sub-folder called *`assets`*. Assets directory is a sub-directory of *`dev-personal`* directory. Inside *assets* directory we will create sub-directory of assets called *`css, js and img`* as shown below.
+
+``` sh
+# Project structure code:
+
+├──dev-personal
+|   ├─ assets/
+|   |   ├─ js
+|   |   ├─ css
+│   |   └─ img
+|   ├─ modules  
+|   ├─ Index.html
 
 ```
-$ mkdir assets
-$ cd assets
-$ mkdir css js img
-$ ls
-$ cd ../
+
+*Now, execute the command below to generate project structure above:*
+
+``` sh
+
+mkdir assets
+cd assets
+mkdir css js img
+ls
+cd ../
 
 ```
+
 | Command    | Description                      |
 | ---------- | ---------------------------------|
-| _`cd ../`_ | to go to the previous directory. |
-| _`mkdir`_  | to create directory folder.      |
+  *`cd ../`* | *to go to the previous directory.*
+  *`mkdir`*  | *to create directory folder.*
 
-![project directory structure](./resources/project-structure.png)
-<a name="website-modules"></a>
-#### List of modules
-Our personal website must contain at least four different _html_ pages. Our four different pages or models will be:
+*` Last modified: 2023-07-08 time: 19:02PM `*
 
- Use _`touch command`_ to create html files:
+***
+
+<a name="websitemodules"></a>
+### /> List of modules
+
+Our personal website project must contain at least `four` different `html` files. Our four different modules will be as follow:
 
 | Modules	  | Html files                                   |
 | --------- | ---------------------------------------------|
-| Home	    | _index.html - This will be our landing page_ |
-| About     | _about.html_                                 |
-| Skills	  | _skills.html_                                |
-| Portfolio | _portfolio.html_                             |   
-| Contact   | _contact.html_                               |  
+  Home	    | *index.html - This will be our landing page*
+  About     | *about.html*
+  Skills	  | *skills.html*  
+  Portfolio | *portfolio.html*   
+  Contact   | *contact.html*  
 
-Now, execute the command below:
+*Now, execute the command below to create all listed modules:*
+
+``` sh
+
+touch index.html about.html skills.html portfolio.html contact.html
 
 ```
-$ sudo touch index.html about.html skills.html portfolio.html contact.html
+
+<a name="createversionfile"></a>
+#### /> `Git:` *create* version file
+
+To begin tracking a *file version*, we use *`git add command`*. A version of a file is created whenever *git commit* command has been execute. This will be our first *`commit`* on the *`main`* branch. We will create other *`branches`* to work-on and *`merge`* them on *`main`* branch whenever we are happy with the results. *`In this personal website’s projects, we will make branch for each modules files for the purpose of learning.`*
+
+Let's now begin tracking *`index.html, about.html, skills.html, portfolio.html and contact.html`*.
+
+*Now, execute the command below:*
+
+``` sh
+
+git add . # staged
+git commit -m " First commit: create a version of all modules files "
 
 ```
-
-<a name="create-version-file"></a>
-#### Create version file
-To begin tracking a _file version_, we use _`git add command`_. A version of a version is created whenever _git commit command_ has been performed. <br />
-This will be our first commit on the _`main branch`_. We will create other branches to work on and _`merge`_ them on _`main branch`_ whenever we are happy with the results. In this personal website’s projects, we will make branch for each _html_ files for the purpose of learning. <br />
-
-Let's now begin tracking _index.html, about.html, skills.html, portfolio.html and contact.html_.
-
-_Now, execute the command below_:
-````
-$ git add .
-$ git commit -m " First commit: create an empty version of all html files "
-
-````
 
 <a name="creating-a-new-branch"></a>
-#### Creating a _new_ branch
-Now, before we do actual coding, let’s create a new branch for each html page. As we said earlier, the whole purpose of this is to learn. We have already said we will create branch for each page and merge them with _`main branch`_ whenever we are happy with the results. It’s a good practise to commit file and merge branches when we have meet project requirements at each stage. So, lets create a new branch called _`home, about, skill, home, portfolio, contact`_. _To do this, let’s execute the following command_:
-```
-$ git branch home
-$ git branch about
-$ git branch skill
-$ git branch portfolio
-$ git branch contact
+#### /> `Git:` *create new* branch - *for each module*
+
+*Now,* before we do actual coding, let’s create a `new branches` for each modules *(.html files)*. As we said earlier, the whole purpose of this is to learn. We have already said we will create branches for each page or module and *`merge`* them to *`main`* branch whenever we are happy with the results. It’s a good practice to commit file and merge branches when we have meet project requirements at each stage. So, lets create a new branch called *`home, about, skill, home, portfolio, contact`*.
+
+*To do this, let’s execute the following command*:
+
+``` sh
+
+git branch home
+git branch about
+git branch skill
+git branch portfolio
+git branch contact
 
 ```
-<a name="basic-branching-and-merging"></a>
-#### Basic on branching and merging
-Now, you have switch to home branch. Let’s go through a simple example of branching and merging with a workflow that you might use in the real world based on our personal website project. Let’s follow these steps:
 
-1. Do some work on a website main branch: = > _`‘You have done html5 document skeleton?’`_
-2.	Create a branch for a new personal website you’re working on: => _`‘You have created home branch’`_
-3.	Do some work in that new created branch: => _`‘This what we are going to do now’`_
+<a name="basicbranchingandmerging"></a>
+#### /> `Git:` basic on branching and merging
 
-<a name="switching-branches"></a>
-#### Switching branches
-To switch to homepage branch, you execute the following command:
-```
-$ git checkout home
+*Now*, we have switch to *home* branch but before we switch let’s go through a simple steps of `branching and merging` with a `workflow` that we might use in the real world development on our personal website project. Let’s follow these steps below:
 
-```
+1. Let's do some work on project main branch on landing page: = > `‘Add html5 document skeleton, and then staged and commit the changes’`
+
+  *@Test Yourself*
+  *First*, we need to open index.html on HTML editor *(Notepad++)*. When we open `index.html`, it will be a clean white file which is to write our source code. If you are a new beginner on `HTML`, switch to [`TEST YOURSELF`](#) before you perform the actual coding with us.
+
+  *@HTML document structure*
+  In [*HTML document structure*](#) repository, we can re-implement *hds* source code, there's a folder called [*hds*](#), there's html file named *`hds.index.html`*. Open this html file, and then copy and paste everything on our `index.html` on our website personal project and save the changes.
+
+  *@Validate:*
+  Before we *staged and commit* this changes on our repository, we must *`validate`* our mark-up language. Professional web developers catch errors in their written *`mark-up`* by validating their html document. *To validate a html document is to check our mark-up if it's abiding by all the rules according to the version of HTML we are using.* Html Documents that are `error-free`, are said to be valid HTML document. It is strongly recommended that we validate our mark-up html documents, especially for professional sites. *`Valid documents`* are more consistent on a variety of browsers, they display more quickly, and they are more accessible. We use [*w3 Mark-up validation service*](https://validator.w3.org/). For Html5 documents, we use [*Nu Html Checker*](https://validator.nu/) validator.
+
+   *Browser developer tools like the Firebug plug-in for Firefox or the built-in developer tools in Safari and Chrome also have validators so we an check our markup if is error-free.*
+
+   Let's *now* validate *`index.html`* file on our project, `fix all the bugs`, when document is `error-free`, we then `staged and commit` to create a new version of our *`index.html`* file with the following massage, `“We have added document structure (hds) on landing page”`.
+
+2.	Create new branch for landing page called home to working on: => *`‘We have already create home branch’`*
+
+3.	Do some work in the home branch: => *`‘This what we are going to do in the section below’`*
+
+*` Last modified: 2023-07-08 time: 19:02PM `*
+
 ***
 
-<a name="home-landing-page"></a>
-### Home - Landing page
+<a name="homelandingpage"></a>
+## /> Home - Landing page
 
-+ [ Add document Appropriate Skelton ](#das)
-+ [ Sketching out our design ](#sketching)
++ [ Switching branches ](#switchingbranches)
++ [ Sketching-out our design ](#sketching)
 + [ Choosing our assets ](#choosing-your-assets)
-+ [ Coding design layout ](#coding-landing-page)
++ [ Coding design layout ](#indexcode)
 + [ Validate landing page ](#validate)
-+ [ Rendered landing page ](#render-html-document)
++ [ Rendered landing page ](#documentrender)
 
-<a name="das"></a>
-#### Document Appropriate Skelton
-First, we need to open our HTML editor _(Notepad++)_. When you open index.html, it will be clean white file which is to write your source code. If you are a new beginner on `HTML`, switch to [`test Yourself`](https://github.com/tshikororoda/html-css-js/) before you perform the actual coding with us.
+<a name="switchingbranches"></a>
+#### /> Switching branches
 
-In [HTML document structure](https://github.com/tshikororoda/html-css-js.git) repository, we can re-implement _hds_ source code, there's a folder called [_hds_](https://github.com/tshikororoda/html-css-js.git), there's html file named _`hds.index.html`_. Open the this html file, then copy and paste everything on your _`index.html`_ on your project and save the changes. Before we _commit_ this changes on our repository, we must `validate` our markup language. Professional web developers catch errors in their written `markup` by validating their document. To validate a document is to check our markup if it's abiding by all the rules according to the version of HTML we are using. Documents that are `error-free` are said to be valid HTML document. It is strongly recommended that we validate our markup documents, especially for professional sites. `Valid documents` are more consistent on a variety of browsers, they display more quickly, and they are more accessible. We use [ w3 Mark-up validation service](https://validator.w3.org/). For HTML5 documents, we use [Nu Html Checker](https://validator.nu/) validator.
+*Do some work in the home, we have to switch to home branch, we execute the command below:*
 
- _Browser developer tools like the Firebug plug-in for Firefox or the built-in developer tools in Safari and Chrome also have validators so we an check our markup if is error-free._
+``` sh
 
- Let's now validate _`index.html`_ on our project, `fix all the bugs`, when document is `error-free`, we then create a new version of our file _`index.html`_ with the following massage, _`“I have added document structure (hds) for landing page”`_.
+git checkout home
+
+```
 
 <a name="sketching"></a>
-#### Sketching out our design
-The first thing we will do is to _sketch out the layout_ of our websites landing page. We do have apps specialized for prototype design which professional developer uses to design full – scale layout of a websites. Grab pen and paper and sketch out roughly how you want your site to look. But for sketch below, is design using _Microsoft PowerPoint 2016_ after a rough sketch on paper.
+#### /> Sketching out our landing page design
 
-![layout design](./resources/landing-page-sketch.png)
+The *first* thing we will do is to *sketch-out the layout* of our websites landing page. We do have *`apps specialized for prototype design`* which *professional developer* uses to design full – scale layout of a websites. Grab pen and paper and sketch-out roughly, how you want our website to look. But for sketch below is design using *Microsoft PowerPoint 2016* after a rough sketch on paper.
+
+![layout design](./resources/landing-page-sketchh.png)
 
 <a name="choosing-your-assets"></a>
-#### Choosing our `assets`
+#### /> Choosing our `assets`
+
 + Content
 + [Theme color](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool)
 + Images
 + Font
 
-<a name="coding-landing-page"></a>
-#### Coding design layout
-`Layout content:` Web designers have been relying on the _&lt;div&gt;_ and _&lt;span&gt;_ elements to layout web content. they act as containers for other elements. These containers can then be `positioned anywhere` on the screen using _style sheets_.
-The Difference between _&lt;span&gt;_ and _&lt;div&gt;_ element. _&lt;span&gt;_ is inline level elements and _&lt;div&gt;_ is block level element.
+<a name="indexcode"></a>
+#### /> Coding design layout
 
-```html
+`Layout content:` Web designers have been relying on the *&lt;div&gt;* and *&lt;span&gt;* elements to layout web content. they act as containers for other elements. These containers can then be `positioned anywhere` on the screen using *style sheets*. The difference between *&lt;span&gt;* and *&lt;div&gt;* element.
 
-<!--/@codewithtshikororoda
- Folder: dev-personal-site/index.html
++ *&lt;span&gt;* is inline level elements
++ and *&lt;div&gt;* is block level element.
 
--->
+However, HTML5 provides an assortment of new tags that add semantic meaning to HTML document. It is not intended that the web browser will necessarily provide any visual implementation of these elements.
 
-<!DOCTYPE html> <!-- HTML5 document version declaration -->
-<html dir="ltr" lang="en">
+``` html
+
+<!DOCTYPE html>
+<html>
   <head>
-
-<!--____________________________________________
-  [ Document header related tags here ]
--->
-
     <meta charset     ="utf-8" />
     <meta http-equiv  ="X-UA-Compatible"  content="IE=edge" />
     <meta name        ="viewport"         content="width=device-width, initial-scale=1.0" />
-    <meta name        ="author"           content="Dakalo Tshikororo" />
 
-    <title> Home | Dakalo Tshikororo </title>
+    <title> Home </title>
 
   </head>
   <body>
-
-<!--____________________________________________
-  [ Document body related tags here ]
--->
-
-<!-- Start of wrapper container -->
-
-    <div id="tda-wrapper">
-
-<!-- Start Header container -->
-
-        <header id="tda-top-header">
-            <div class="tda-row">
-                <div class="tda-float-left">
+    <!-- Start of wrapper container -->
+    <div>
+      <!-- Start Header container -->
+        <header>
+            <div>
+                <div>
                     <span> D.A tshikororo </span>
                 </div>
-
-                <div class="tda-float-right">
+                <div>
                     <nav>
                         <ul>
                             <li> <a href="#"> Home       </a> </li>
@@ -304,76 +363,64 @@ The Difference between _&lt;span&gt;_ and _&lt;div&gt;_ element. _&lt;span&gt;_ 
                     </nav>
                 </div>
 
-                <p class="clear tda-float-right"> You are welcome, you can view the site as you wish </p>
+                <p> You are welcome, you can view the site as you wish </p>
             </div>
-
         </header>
+        <!-- End Header container -->
 
-<!-- End Header container -->
-
-<!-- Start Main content container -->
-
+        <!-- Start Main content container -->
         <main>
-            <div class="tda-row">
-                <section id="tda-section-one">
-                  <h2 class="hidden"> First section </h2>
+            <div>
+                <section>
+                  <h2> First section </h2>
+                  <h1> Hi Web programmer </h1>
 
-                    <h1> Web programmer with Python, JavaScript <span> <a href="">more</a></span></h1>
+                  <ul>
+                      <li> Web/ Internet Technology </li>
+                      <li> Web framework            </li>
+                      <li> Databases                </li>
+                      <li> React, Next.js, Vue      </li>
+                  </ul>
 
-                    <ul>
-                        <li> Ul/UX Design, HTML5, CSS3  </li>
-                        <li> Logo Design, Coreldraw     </li>
-                        <li> Branding Identity          </li>
-                    </ul>
-
-                    <div id="tda-button">
-                        <button> Explore Portfolio  </button>
-                        <button> Become my employer </button>
-                    </div>
-
+                  <div>
+                      <button> Explore Portfolio  </button>
+                      <button> Become my employer </button>
+                  </div>
                 </section>
             </div>
+            <div>
+                <section>
+                  <h2> Second section </h2>
+                  <p> &#8220; I'm dedicated to offer outstanding service &#8221; </p>
 
-            <div class="tda-row">
-                <section id="tda-section-two">
-                  <h2 class="hidden"> Second section </h2>
-
-                    <p> &#8220; Im dedicated to offer outstanding service &#8221; </p>
-
-                    <ul>
-                        <li> South African based but available for global markets  </li>
-                        <li> TrustIndex ratingof 9.6 in development                </li>
-                        <li> Fast and reliable support                             </li>
-                    </ul>
-
+                  <ul>
+                      <li> South African based but available for global markets  </li>
+                      <li> Trust Index rating of 9.6 in development </li>
+                      <li> Fast and reliable support  </li>
+                  </ul>
                 </section>
             </div>
-
         </main>
+        <!-- End Main content container -->
 
-<!-- End Main content container -->
-
-<!-- Start footer container -->
-
-        <footer id="footer-wrapper">
-            <div class="tda-row">
+        <!-- Start footer container -->
+        <footer>
+            <div>
                 <span> 2020 &#64; tshikororoda </span>
             </div>
         </footer>
-
-<!-- End footer container -->
-
+        <!-- End footer container -->
     </div>
-
-<!-- End of wrapper container -->
-
+    <!-- End of wrapper container -->
   </body>
 </html>
 
 ```
+
 <a name="validate"></a>
-#### Validate `landing page`
-Here are some of the things validators ([ w3 Mark-up validation service](https://validator.w3.org/) / [Nu Html Checker](https://validator.nu/) ) check for:
+#### /> Validate `landing page`
+
+Here are some of the things validators *([w3 Mark-up validation service](https://validator.w3.org/) / [Nu Html Checker](https://validator.nu/))* check for:
 + The inclusion of a `DOCTYPE declaration`. Without declaration the validator doesn’t know which version of HTML or XHTML to validate against.
 + An indication of the character encoding for the document.
 + The inclusion of required rules and attributes.
@@ -382,110 +429,117 @@ Here are some of the things validators ([ w3 Mark-up validation service](https:/
 + Nesting errors.
 + Typos and other minor errors.
 
-#### Rendered landing page
-_Results on browsers_
-![layout design](./resources/results_rendered.PNG)
+<a name="documentrender"></a>
+#### /> Rendered landing page
 
-<a name="split-source-code"></a>
-## Split source code on index.html
+*Results on browsers*
+![layout design](../resources/documentrender.png)
 
-Now, we need to split source code that we wrote earlier on _`(Index.html)`_. To achieve this, we simply create a new file called _`Home.html`_, then we cut the main content of _`Index.html`_ file and then paste the content on `Home.html`. Header and footer will remain on _`index.html`_ file as shown below. We want to avoid duplication of code mainly _`header and footer`_ since they appear in each module.
+*` Last modified: 2023-07-08 time: 19:02PM `*
 
-+ [Entry point  of all module: _Index.html_](#index)
+***
+
+<a name="webserver"></a>
+# Move project source code to a *`local web server`*
+
+Up until this point we have been loading all our *.html* page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [*`Mongoose webserver`*](https://mongoose.ws/tutorials/tools/). This is one of the smallest *minimal static HTTP server* available that requires very minimal configuration.
+
+*Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8000 ](http://dev.personal:8000/) instead of using [ localhost:8000 ](http://localhost:8000/)*
+
+*The web browser uses the `domain name and port number` to determine the origin of a web page (port number usually is 80 or 443 defaults – but in this case it will listen on 8000).*
+
+To *run* mongoose HTTP server to serve our web pages:
+
++ Download and install [`GCC / MinGW compiler`](#)
+  + Set install destination to c:\
+  + Accept suggested default settings.
+  + Go to `c:\mingw32\bin` folder and rename `mingw32-make.exe` to `make.exe`.
+  + Add `c:\mingw32\bin` to the Path environment variable.
+
+  ``` sh
+
+  gcc --version
+
+  ```
+
+  + Build and run mongoose _http-server_
+
+  ``` sh
+
+  git clone https://github.com/cesanta/mongoose
+  cd mongoose/examples/http-server
+  make mingw
+
+  ```
+
+  *Go to [http://localhost:8000](http://localhost:8000/) in your browser.*
+
+*` Last modified: 2023-07-08 time: 19:02PM `*
+
+***
+
+<a name="splitsourcecode"></a>
+# Split source code on `index.html`
+
+*Now,* we need to `split source code` that we wrote earlier on: *`Index.html`*. To achieve this, we simply create a new file called *`Home.html`*, then we cut the main content of *`Index.html`* file and then paste the content on *`Home.html`*. Header and footer will remain on *`index.html`* file as shown below. We want to avoid duplication of code mainly *`header and footer`* since they appear in each module.
+
++ [Entry point  of all module: *Index.html*](#index)
 + [Module Home - Landing page](#home)
 
 <a name="index"></a>
 #### Entry point of all module : Index.html
 
-This is the entry point of our website. We have now remove main content from _index.html_ and paste it on _home.html_ file. Within main element on _index.html_ we add _&lt;iframe&gt;_ element as shown below.
+This is the entry point of our website. We have now remove main content from *index.html* and paste it on *home.html* file. Within main element on *index.html* we add *&lt;iframe&gt;* element as shown below.
 
-```html
-
-<!--/@codewithtshikororoda
- Folder: dev-personal-site/Index.html
-
- @Entry point of all website module
-
--->
+``` html
 
 <!DOCTYPE html> <!-- HTML5 document version declaration -->
-<html dir="ltr" lang="en">
+<html>
   <head>
-
-<!--____________________________________________
-  [ Document header related tags here ]
--->
-
     <meta charset     ="utf-8" />
     <meta http-equiv  ="X-UA-Compatible"  content="IE=edge" />
     <meta name        ="viewport"         content="width=device-width, initial-scale=1.0" />
     <meta name        ="author"           content="Dakalo Tshikororo" />
 
-    <title> Home | Dakalo Tshikororo </title>
+    <title> Home </title>
 
   </head>
   <body>
-
-<!--____________________________________________
-  [ Document body related tags here ]
--->
-
-<!-- Start of wrapper container -->
-
-    <div id="tda-wrapper">
-
-<!-- Start Header container -->
-
-        <header id="tda-top-header">
-            <div class="tda-row">
-                <div class="tda-float-left">
-                    <span> tshikororoda </span>
-                </div>
-
-                <div class="tda-float-right">
+	<!-- Start of wrapper container -->
+    <div>
+		<!-- Start Header container -->
+        <header>
+            <div>
+                <div> <span> tshikororoda </span> </div>
+                <div>
                     <nav>
                         <ul>
-                            <li> <a href="#" onclick="loadModuleContent('home');">      Home       </a> </li>
-                            <li> <a href="#" onclick="loadModuleContent('about');">     About      </a> </li>
-                            <li> <a href="#" onclick="loadModuleContent('skills');">    Skills     </a> </li>
-                            <li> <a href="#" onclick="loadModuleContent('portfolio');"> Portfolio  </a> </li>
-                            <li> <a href="#" onclick="loadModuleContent('contact');">   Contact    </a> </li>
+                            <li> <a href="#"> Home      </a> </li>
+                            <li> <a href="#"> About     </a> </li>
+                            <li> <a href="#"> Skills    </a> </li>
+                            <li> <a href="#"> Portfolio </a> </li>
+                            <li> <a href="#"> Contact   </a> </li>
                         </ul>
                     </nav>
                 </div>
-
                 <p class="clear tda-float-right"> You are welcome, you can view the site as you wish </p>
             </div>
-
         </header>
+		    <!-- End Header container -->
 
-<!-- End Header container -->
+		    <!-- Start Main content container -->
+        <main></main>
+		    <!-- End Main content container -->
 
-<!-- Start Main content container -->
-
-        <main>
-          <iframe></iframe>
-        </main>
-
-<!-- End Main content container -->
-
-<!-- Start footer container -->
-
-        <footer id="footer-wrapper">
-            <div class="tda-row">
+		    <!-- Start footer container -->
+        <footer>
+            <div>
                 <span> 2020 &#64; tshikororoda </span>
             </div>
-
         </footer>
-
-<!-- End footer container -->
-
+		    <!-- End footer container -->
     </div>
-
-<!-- End of wrapper container -->
-
-    <!-- External JavaScript -->
-    <script src="./assets/js/main.js"></script>
+	  <!-- End of wrapper container -->
   </body>
 </html>
 
@@ -494,375 +548,206 @@ This is the entry point of our website. We have now remove main content from _in
 <a name="home"></a>
 #### Module Home - Landing page
 
-+ [Create a file called _Home.html_](#)
-+ [Add home page content](#)
++ [Create a file called *Home.html*](#)
++ [Add Home module source code or mark-up](#)
 
-###### Create a file called: Home.html
+*Create a html file called: Home.html. the source code on this html document will be served as a default landing page*
 
-```
+``` sh
 
-$ touch Home.html
-
-```
-###### Add home page content
-
-```html
-
-<!--/@codewithtshikororoda
- Folder: dev-personal-site/Home.html
-
- @Landing page
- @Set as a default
-
--->
-
-<div class="tda-row">
-	<section id="tda-section-one">
-	  <h2 class="hidden"> First section </h2>
-
-		<h1> Web programmer with Python, JavaScript <span> <a href="">more</a></span></h1>
-
-		<ul>
-			<li> Ul/UX Design, HTML5, CSS3  </li>
-			<li> Logo Design, Coreldraw     </li>
-			<li> Branding Identity          </li>
-		</ul>
-
-		<div id="tda-button">
-			<button> Explore Portfolio  </button>
-			<button> Become my employer </button>
-		</div>
-
-	</section>
-</div>
-
-<div class="tda-row">
-	<section id="tda-section-two">
-	  <h2 class="hidden"> Second section </h2>
-
-		<p> &#8220; Im dedicated to offer outstanding service &#8221; </p>
-
-		<ul>
-			<li> South African based but available for global markets  </li>
-			<li> Trust Index rating of 9.6 in development              </li>
-			<li> Fast and reliable support                             </li>
-		</ul>
-
-	</section>
-</div>
+touch Home.html
 
 ```
 
-#### Load module content to _Index file_
-Now, we are going to create a <span style="font-weight: bold;">JavaScript function</span> to handle two things:
-+ Change _document title_ to the active module.
-+ Load module to _iframe_ element form HTML document.
-+ Load module to _main_ element form XML document.
+*Add source code below to Home.html, this html document will be loaded by default because it contain source code to be rendered on landing page*
 
-We want our <span style="font-weight: bold;">_title to dynamically changes_</span> to an active module. When the user access our landing page _(Home.html)_, The _`title`_ of the page should be `" Home | Dakalo Tshikororo "`. Whenever a user navigate to another page such as about, the title of the page should be change to `" About | Dakalo Tshikororo "` etc.
+``` html
 
-When a user _click_ on the _link_ of one of the following module _`Home.html, About.html, Skills.html, Portfolio.html, and Contact.html`_ the module file must load dynamically to an `Index.html` file on _iframe_ element using <span style="font-weight: bold;">JavaScript</span> by assigning new value of `src attribute`. This is how a requested module will load it's content on the web browser. _`Home.html`_ will be set as a default whenever HTML document is loaded on the web browser.
+	<div>
+		<section>
+		  <h2> First section </h2>
+		  <h1> Hi Web programmer </h1>
 
-##### 1. Load module into _iframe_ form HTML document
+		  <ul>
+			  <li> Web/ Internet Technology </li>
+			  <li> Web framework </li>
+			  <li> Databases     </li>
+			  <li> React, Next.js, Vue </li>
+		  </ul>
 
-An inline _`iframe`_ is HTML element that loads another document within the another document. Using an _`iframe`_ for `dynamic content` is simple and effective, but it is becoming less popular these days. _New methods of creating dynamic web content using dynamic `HTML and AJAX` are now more common. Such methods can create more interactive and integrated sites than using an `iframe` to load another static page._ When the web browser encounters an _`iframe`_ element, `it creates a new document environment to load the document`. It loads the document from the referenced _`src or srcdoc`._
+		  <div>
+			  <button> Explore Portfolio  </button>
+			  <button> Become my employer </button>
+		  </div>
+		</section>
+	</div>
+	<div>
+		<section>
+		  <h2> Second section </h2>
+		  <p> &#8220; I'm dedicated to offer outstanding service &#8221; </p>
 
-+ [Pseudo code](#pseudojshtml)
-+ [Create a file named Controller-html.js](#createcontrollerhtmljs)
-+ [Controller-html.js code](#codecontrollerhtmljs)
-
-<a name="pseudojshtml"></a>
-##### Pseudo code
-
-```
-Define variable called moduleName.
-Set/initialize the value of moduleName to undefined.
-Define a function called loadModuleContent with parameter variable called value
-	 loadModuleContent(value)
-
-Define three variables named:
-	iframe, current_page and loaded_page.
-
-Select iframe element from DOM (index.html) using querySelector methods passing a tag name as an argument.
-Set/initialize the value of currentPage to the parameter variable named value to get an argument.
-
-if the currentPage is set to undefined value
-	set document title to "Home | Dakalo Tshikororo".
-	set currentPage to "Home".
-	set loadedPage to "./" + currentPage + ".html".
-	set iframe attribute src to loadedPage.
-
-else currentPage is set to a defined value
-	set document title 	to value + " | Dakalo Tshikororo".
-  set loadedPage to "./" + currentPage + ".html".
-	set iframe attribute src to loadedPage.
+		  <ul>
+			  <li> South African based but available for global markets  </li>
+			  <li> Trust Index rating of 9.6 in development </li>
+			  <li> Fast and reliable support  </li>
+		  </ul>
+		</section>
+	</div>
 
 ```
 
-<a name="createcontrollerhtmljs"></a>
-##### Create a file named Controller-html.js
-```
-$ touch controller-html.js
+*`Last modified: 2023-07-15, time: 17:57PM`*
+
+***
+
+<a name="entrypointLoadmodule"></a>
+# Load module mark-up to *`Index.html`*
+
+*Now,* we are going to create a custom JavaScript function to handle two things:
++ [Change `document title` to the active module.](#cdocumenttitle)
++ Load module content to `Index.html`
+  + Load module content into `main element` from `HTML document`.
+  + Load module content into `main element` from `XML document`.
+
+<a name="cdocumenttitle"></a>
+## Change `document title` to the active module.
+
+We want html `document title` to dynamically change to an *`active module`*. When user request to access module mark-up, The html `document title` on entry point must dynamically change to the module name. *For instance: If user make a request to navigate to `about module`, the title of the document should be change to `About` etc. By default,* the html document title will be Home, because home module will be loaded by default.
+
+
+*First, create a separate or external JavaScript document called View.js and link the*
+
+``` sh
+
+  touch View.js
 
 ```
+*Next, link the external JavaScript document on entry point (Index.html) at the bottom of the document as shown below:*
 
-<a name="codecontrollerhtmljs"></a>
-##### Controller-html.js code
+``` html
 
-```js
-"use strict";
-
-// Define the parameter variable called moduleName.
-let moduleName;
-
-// Set/initialize moduleName to undefined.
-moduleName = undefined;
-
-// Define a function called loadPageContent with parameter variable called value
-function loadModuleContent(value) {
-
-  // Define variables
-  let iframe;
-  let currentPage;
-  let loadedPage;
-
-  // Define constant variables
-	const myName = "Dakalo Tshikororo";
-
-  // Select iframe element from DOM passing a tag name as an argument.
-  iframe = document.querySelector("iframe");
-
-  if(value == undefined){
-
-    /*  
-        If the currentPage is set to undefined value.
-        This is loaded as a default.
-                                      */
-
-      let value = "home"; // default value
-      let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
-
-      document.title  = title + " | " + myName;
-
-      currentPage     = value;
-      loadedPage      = "./content/" + currentPage + ".html";
-
-      iframe.setAttribute("src", loadedPage);
-
-	}else{ // if currentPage is set to a defined value
-
-      // Enforce the first letter of the title of active page to be uppercase
-      let title = value.charAt(0).toUpperCase() + value.slice(1 , value.length);
-
-     // Set title of the page loaded/active
-      document.title = title + " | " + myName;
-
-      currentPage    = value;
-      loadedPage     = "./content/" + currentPage + ".html";
-
-      iframe.setAttribute("src", loadedPage);
-
-	} // End of conditional statements
-
-// Add CSS
-  iframe.style.width  = "100%";
-  iframe.style.height = "400px";
-  iframe.style.border = "01px solid #f1f1f1";
-
-}// End of function: loadPageContent(title);
-
-// Run this functions when the document is loaded
-window.onload = function()	{ // #01
-
-	loadPageContent(moduleName);
-
-}
+    <!-- External JavaScript -->
+    <script src="../assets/js/View.js"></script>
+  </body>
+</html>
 
 ```
 
-##### 2. Load module into _main_ form XML document
+*Below, we define one data attribute called `data-moduleName` to assign custom data: `home, about, skills, portfolio and contact`.*
 
-When a user _click_ on the _link_ of one of the following module _`Home, About, Skills, Portfolio, and Contact`_ the module _xml file_ must load dynamically to an _`Index.html`_ file on _main element_ using <span style="font-weight: bold;">AJAX</span> which perform HTTP request and response. AJAX require HTTP server to execute successfully. [_Refer to the section below for setting up HTTP server._](#"webserver) This way module content will be loaded on the web browser and _`Home.xml`_ will be set as _default module or landing page_ when HTML document is loaded on the web browser. This is methods that are prefer to use.
+``` html
 
-+ [Pseudo code](#pseudojsxml)
-+ [Create a file named Controller-xml.js](#createcontrollerxmljs)
-+ [Controller-xml.js code](#codecontrollerxmljs)
-
-<a name="pseudojsxml"></a>
-##### Pseudo code
-
-```txt
-
-	Define variable called moduleName.
-	Set/initialize the value of moduleName to undefined.
-	Define a function called loadModuleContent with parameter variable called xmlFileName.
-		loadModuleContent(value)
-			Create an XMLHttpRequest object asigned on xhttp variable:
-				xhttp = new XMLHttpRequest()   
-
-			Define a callback function:			
-			xhttp.onload = function() {
-				// What to do when the response is ready
-			}
-
-			Define constant variables called myName with "Dakalo Tshikororo" string assigned to it.
-
-			if the xmlFileName is set to undefined value
-				Define and set xmlFileName to "Home".
-				Define and set title to: xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
-				Set document.title to title and myName.
-				Send a request to a server if xmlFileName undefined.
-					xhttp.open("GET", xmlFileName + ".xml")
-					xhttp.send()
-
-			else the xmlFileName is set to defined value
-				Define and set title to: xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
-				Set document.title to title and myName.
-				Send a request to a server if xmlFileName defined.
-					xhttp.open("GET", xmlFileName + ".xml")
-					xhttp.send()
-
-	Define the function called displayModuleContent with xml as a parameter to be executed when the response is ready.
-		displayModuleContent(xml)
-			Define the constant variable called content response as an XML DOM
+  <li> <a data-moduleName="home">      Home      </a> </li>
+  <li> <a data-moduleName="about">     About     </a> </li>
+  <li> <a data-moduleName="skills">    Skills    </a> </li>
+  <li> <a data-moduleName="portfolio"> Portfolio </a> </li>
+  <li> <a data-moduleName="contact">   Contact   </a> </li>
 
 ```
 
-<a name="createcontrollerxmljs"></a>
-##### Create a file named Controller-xml.js
-```
-$ touch controller-xml.js
+*Pseudo code for dynamicaly Change the document title*
+
+> + Trigger DOMContentLoaded event
+      document.addEventListener('DOMContentLoaded', callbackfunction
+  + Define const variable HTMLDocumentModules.
+  + Get / select all element whose attribute is data-nav
+        HTMLDocumentModules = document.querySelectorAll()
+ + Loop through each HTMLDocumentModules nodeList element
+		    HTMLDocumentModules.forEach(callbackfunction)
+    + Trigger onclick event on selected element within the loop.
+          HTMLDocumentModule.onclick(event,callbackfunction) /
+          HTMLDocumentModule.addEventListener(event,callbackfunction)
+      + set html document title.
+        document.title
+      + set content color
+        style.color
+
+*view.js*
+
+``` js
+
+"use strict"
+
+  /* Dynamically change document title  */
+  document.addEventListener('DOMContentLoaded', () => {
+
+		const HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
+
+		HTMLDocumentModules.forEach( HTMLDocumentModule => {
+			HTMLDocumentModule.addEventListener('click', () => {
+				document.title = HTMLDocumentModule.dataset.nav
+			})
+		})
+	})
 
 ```
 
-<a name="codecontrollerxmljs"></a>
-##### Controller-xml.js code
+## Load module into `main` form HTML document
 
-```js
-"use strict";
+When user trigger *click* event on module link, the module markup must be loaded dynamically to an entry point into `main element`. In HTML we have element that loads another html document markup within the another html document markup. it is an `iframe` element. Using iframe is simple and effective. When the web browser encounters an `iframe` element, `it creates a new document environment to load the document`.
 
-// Define the parameter variable called moduleName.
-let moduleName;
+*However, AJAX *(Asynchronous JavaScript And XML) can create more interactive and integrated sites than using an `iframe` to load another static html document.*
 
-// Set/initialize moduleName to undefined.
-moduleName = undefined;
+*Pseudo code for loading html document into another html document.*
 
-// Define a function called loadModuleContent with parameter variable called xmlFileName
+> + Trigger `DOMContentLoaded` interface event
+      document.addEventListener('DOMContentLoaded', callbackfunction
+  + Define const variable *`iframe, main, modulePath`*.
+  + Get / select main element and create iframe
+        main    = document.querySelector()
+        iframe  = document.createElement()
+ + Loop through each HTMLDocumentModules nodeList element
+		    HTMLDocumentModules.forEach(callbackfunction)
+    + Trigger *`onclick`* event on selected element within the loop.
+          HTMLDocumentModule.onclick(event,callbackfunction) /
+          HTMLDocumentModule.addEventListener(event,callbackfunction)
+      + Assign path to modulePath.
+      + Set attribute *src* value to be *`modulePath`*
++ Append *`iframe`* element into *`main`* element.
+      main.append(iframe)
 
-function loadModuleContent(xmlFileName) {
+*View.js*
 
-	// Create an XMLHttpRequest object
-	const xhttp = new XMLHttpRequest();
+``` js
 
-	// Define a callback function
-	xhttp.onload = function() {
+"use strict"
 
-		displayModuleContent(this);
-	}
+/* Dynamically load html document markup  */
+const main          = document.querySelector('main')
+const iframe        = document.createElement("iframe")
+const fileExtension =  ".html"
 
-	// Define constant variables
-	const myName = "Dakalo Tshikororo";
+HTMLDocumentModules.forEach( HTMLDocumentModule => {
+  HTMLDocumentModule.onclick = () => {
+    const modulePath  = "./modules/" + HTMLDocumentModule.dataset.nav + fileExtension
+    iframe.setAttribute("src", modulePath)
+  }
+})
 
-	if(xmlFileName == undefined){
+main.append(iframe)
 
-		/*  
-		 * @ If the xmlFileName is set to undefined value.
-		 * @ This is loaded as a default.
-		 *
-		 ***************************************************************/
+```
 
+*` Last modified: 2023-07-16 time: 09:41AM `*
 
-		let xmlFileName = "home"; // default value
-		let title 		= xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
+***
 
-		// Set title of the page loaded/active
-		document.title  = title + " | " + myName;
+*Next,* link the external stylesheet document on entry point within head element of the document as shown below:
 
-		// Send a request to a server if xmlFileName undefined
-		xhttp.open("GET", "./content/" + xmlFileName + ".xml");
-		xhttp.send();
+``` CSS
+/* <link rel="stylesheet" href="main.css" />
 
-	}else{
+    Adds sylesheet properties: width, height and border to iframe. */
 
-		/*
-		 *
-		 * Enforce the first letter of the title of active page to be uppercase
-		 *
-		 ***********************************************************************/
+  iframe {
 
-		let title = xmlFileName.charAt(0).toUpperCase() + xmlFileName.slice(1 , xmlFileName.length);
+    width : 100%;
+    height: 400px;
+    border: 01px solid #f1f1f1;
 
-		// Set title of the page loaded/active
-		document.title = title + " | " + myName;
-
-		// Send a request to a server if xmlFileName is define
-		xhttp.open("GET", "./content/" + xmlFileName + ".xml");
-		xhttp.send();
-	}
-
-}
-
-// Run this functions when the document is loaded
-window.onload = function()	{
-
-	loadModuleContent(moduleName);
-
-}
-
-// Define the function to be executed when the response is ready
-function displayModuleContent(xml) {
-
-  // Define the constant variable called xmlDom to get response as an XML DOM
-  const xmlDom = xml.responseXML;
-
-  // Define constant variable called module to select a child of root element form XML DOM  
-  const module = xmlDom.getElementsByTagName("MODULE");
-
-  //
-  let content =	"";
-
-  // Loop
-  for (let i = 0; i <module.length; i++) {
-
-	// Select a childNodes element module element.
-    content += module[i].getElementsByTagName("DATA")[0].childNodes[0].nodeValue;
   }
 
-  // Load/insert content on main element
-  document.getElementById("mainContent").innerHTML = content;
-}
-
 ```
 
-<a name="webserver"></a>
-## Moving our project files _(.html / .xml)_ to a local web server
-
-Up until this point we have been loading all our _.html_ page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [ _`Mongoose webserver`_](https://mongoose.ws/tutorials/tools/). This is one of the smallest _minimal static HTTP server_ available that requires very minimal configuration.
-
-_Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8000 ](http://dev.personal:8000/) instead of using [ localhost:8000 ](http://localhost:8000/)._
-
-_The web browser uses the `domain name and port number` to determine the origin of a web page (port number usually is 80 or 443 defaults – but in this case it will listen on 8000)._
-
-To _run_ mongoose HTTP server to serve our web pages:
-
-+ Download and install [`GCC / MinGW compiler`](#)
-  + Set install destination to c:\
-  + Accept suggested default settings.
-  + Go to `c:\mingw32\bin` folder and rename `mingw32-make.exe` to `make.exe`.
-  + Add `c:\mingw32\bin` to the Path environment variable.
-
-
-  ```
-  gcc --version
-
-  ```
-+ Build and run mongoose _http-server_
-
-```
-  git clone https://github.com/cesanta/mongoose
-  cd mongoose/examples/http-server
-  make mingw
-
-```
-
-[ _Go to http://localhost:8000 in your browser._ ](http://localhost:8000/)
+*Iframe Caveats*
++ We cannot directly apply stylesheet to the `inner iframe` element through parent window stylesheet selectors even though it's domain is same as parent.
