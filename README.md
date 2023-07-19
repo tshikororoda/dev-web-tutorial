@@ -100,6 +100,7 @@ Below is the list of *command we have used*:
   _mkdir_ | _To create a new directory._
 
 *` Last modified: 2023-07-08 time: 19:02PM `*
+
 ***
 
 <a name="controlversion"></a>
@@ -148,7 +149,7 @@ git init
 
 *The `git init` command will Initialize dev-personal directory to an `empty git repository in C:/workspace/dev-personal/.git/`*.
 
-*:clap: We have successfully initialize root directory of our personal website project* to be git repository.*
+*:clap: We have successfully initialize root directory of our personal website project to be git repository.*
 
 *` Last modified: 2023-07-08 time: 18:49PM `*
 
@@ -242,24 +243,24 @@ git commit -m " First commit: create a version of all modules files "
 <a name="creating-a-new-branch"></a>
 #### /> `Git:` *create new* branch - *for each module*
 
-*Now,* before we do actual coding, let’s create a `new branches` for each modules *(.html files)*. As we said earlier, the whole purpose of this is to learn. We have already said we will create branches for each page or module and *`merge`* them to *`main`* branch whenever we are happy with the results. It’s a good practice to commit file and merge branches when we have meet project requirements at each stage. So, lets create a new branch called *`home, about, skill, home, portfolio, contact`*.
+*Now,* before we do actual coding, let’s create a `new branches` for each modules *(.html files)*. As we said earlier, the whole purpose of this is to learn. We have already said we will create branches for each page or module and *`merge`* them to *`main`* branch whenever we are happy with the results. It’s a good practice to commit file and merge branches when we have meet project requirements at each stage. So, lets create a new branch called *`dakalo/home, dakalo/about, thalukanyo/skills, dakalo/home, tshedza/portfolio, dakalo/contact`*.
 
 *To do this, let’s execute the following command*:
 
 ``` sh
 
-git branch home
-git branch about
-git branch skill
-git branch portfolio
-git branch contact
+git branch dakalo/home
+git branch dakalo/about
+git branch tshedza/skills
+git branch tshedza/portfolio
+git branch dakalo/contact
 
 ```
 
 <a name="basicbranchingandmerging"></a>
 #### /> `Git:` basic on branching and merging
 
-*Now*, we have switch to *home* branch but before we switch let’s go through a simple steps of `branching and merging` with a `workflow` that we might use in the real world development on our personal website project. Let’s follow these steps below:
+*Now*, we have switch to *dakalo/home* branch but before we switch let’s go through a simple steps of `branching and merging` with a `workflow` that we might use in the real world development on our personal website project. Let’s follow these steps below:
 
 1. Let's do some work on project main branch on landing page: = > `‘Add html5 document skeleton, and then staged and commit the changes’`
 
@@ -285,7 +286,7 @@ git branch contact
 ***
 
 <a name="homelandingpage"></a>
-## /> Home - Landing page
+### /> Home - Landing page
 
 + [ Switching branches ](#switchingbranches)
 + [ Sketching-out our design ](#sketching)
@@ -293,6 +294,7 @@ git branch contact
 + [ Coding design layout ](#indexcode)
 + [ Validate landing page ](#validate)
 + [ Rendered landing page ](#documentrender)
++ [ Merging home branch to main branch ](#mergetomain)
 
 <a name="switchingbranches"></a>
 #### /> Switching branches
@@ -301,7 +303,7 @@ git branch contact
 
 ``` sh
 
-git checkout home
+git checkout dakalo/home
 
 ```
 
@@ -310,7 +312,7 @@ git checkout home
 
 The *first* thing we will do is to *sketch-out the layout* of our websites landing page. We do have *`apps specialized for prototype design`* which *professional developer* uses to design full – scale layout of a websites. Grab pen and paper and sketch-out roughly, how you want our website to look. But for sketch below is design using *Microsoft PowerPoint 2016* after a rough sketch on paper.
 
-![layout design](./resources/landing-page-sketchh.png)
+![layout design](./src/resources/sketch-home.png)
 
 <a name="choosing-your-assets"></a>
 #### /> Choosing our `assets`
@@ -328,16 +330,15 @@ The *first* thing we will do is to *sketch-out the layout* of our websites landi
 + *&lt;span&gt;* is inline level elements
 + and *&lt;div&gt;* is block level element.
 
-However, HTML5 provides an assortment of new tags that add semantic meaning to HTML document. It is not intended that the web browser will necessarily provide any visual implementation of these elements.
+*However,* HTML5 provides an assortment of new tags that add semantic meaning to HTML document. It is not intended that the web browser will necessarily provide any visual implementation of these elements.
 
 ``` html
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset     ="utf-8" />
-    <meta http-equiv  ="X-UA-Compatible"  content="IE=edge" />
-    <meta name        ="viewport"         content="width=device-width, initial-scale=1.0" />
+  <head lang="en" dir="ltr">
+    <meta charset ="utf-8" />
+    <meta name    ="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title> Home </title>
 
@@ -349,16 +350,16 @@ However, HTML5 provides an assortment of new tags that add semantic meaning to H
         <header>
             <div>
                 <div>
-                    <span> D.A tshikororo </span>
+                    <span> My name </span>
                 </div>
                 <div>
                     <nav>
                         <ul>
-                            <li> <a href="#"> Home       </a> </li>
-                            <li> <a href="#"> About      </a> </li>
-                            <li> <a href="#"> Skills     </a> </li>
-                            <li> <a href="#"> Portfolio  </a> </li>
-                            <li> <a href="#"> Contact    </a> </li>
+                            <li> <a> Home      </a> </li>
+                            <li> <a> About     </a> </li>
+                            <li> <a> Skills    </a> </li>
+                            <li> <a> Portfolio </a> </li>
+                            <li> <a> Contact   </a> </li>
                         </ul>
                     </nav>
                 </div>
@@ -406,7 +407,7 @@ However, HTML5 provides an assortment of new tags that add semantic meaning to H
         <!-- Start footer container -->
         <footer>
             <div>
-                <span> 2020 &#64; tshikororoda </span>
+                <span> 2020 &#64; dev-personal </span>
             </div>
         </footer>
         <!-- End footer container -->
@@ -433,16 +434,28 @@ Here are some of the things validators *([w3 Mark-up validation service](https:/
 #### /> Rendered landing page
 
 *Results on browsers*
-![layout design](../resources/documentrender.png)
+![layout design](./src/resources/rendered-index.png)
+
+#### /> Merging home branch to main branch
+*Now, execute the command below:*
+
+``` sh
+
+  git add Index.html # staged home branch
+  git commit -m " First commit on home branch: Add landing page markup on Index.html "
+  git checkout main
+  git merge dakalo/home
+
+```
 
 *` Last modified: 2023-07-08 time: 19:02PM `*
 
 ***
 
 <a name="webserver"></a>
-# Move project source code to a *`local web server`*
+### /> Move personal project to a *`local web server`*
 
-Up until this point we have been loading all our *.html* page directly from the file-system. We now need to move web pages to the web server. This section will indicate how to download setup and start working with [*`Mongoose webserver`*](https://mongoose.ws/tutorials/tools/). This is one of the smallest *minimal static HTTP server* available that requires very minimal configuration.
+*Up* until this point we have been loading all our *.html* page directly from the file-system. We now need to move `project source code` to the web server. This *section* will indicate how to download and run *setup* to start working with [*`Mongoose webserver`*](https://mongoose.ws/tutorials/tools/). This is one of the smallest *minimal static HTTP server* available that requires very minimal configuration.
 
 *Several of the APIs we will be using in features as we build our website rely on web pages being served from a specific domain name – even if that domain is just `"localhost"` is still work perfect. Rather we can define our domain name as [ dev.personal:8000 ](http://dev.personal:8000/) instead of using [ localhost:8000 ](http://localhost:8000/)*
 
@@ -479,67 +492,66 @@ To *run* mongoose HTTP server to serve our web pages:
 ***
 
 <a name="splitsourcecode"></a>
-# Split source code on `index.html`
+### /> Split source code on `index.html`
 
 *Now,* we need to `split source code` that we wrote earlier on: *`Index.html`*. To achieve this, we simply create a new file called *`Home.html`*, then we cut the main content of *`Index.html`* file and then paste the content on *`Home.html`*. Header and footer will remain on *`index.html`* file as shown below. We want to avoid duplication of code mainly *`header and footer`* since they appear in each module.
 
-+ [Entry point  of all module: *Index.html*](#index)
++ [Entry point  of *all module: Index.html*](#index)
 + [Module Home - Landing page](#home)
 
 <a name="index"></a>
 #### Entry point of all module : Index.html
 
-This is the entry point of our website. We have now remove main content from *index.html* and paste it on *home.html* file. Within main element on *index.html* we add *&lt;iframe&gt;* element as shown below.
+This is the entry point of our website. We have now remove main content from *Index.html* and paste it on *home.html* file.
 
+*@Index.hml*
 ``` html
 
 <!DOCTYPE html> <!-- HTML5 document version declaration -->
 <html>
-  <head>
-    <meta charset     ="utf-8" />
-    <meta http-equiv  ="X-UA-Compatible"  content="IE=edge" />
-    <meta name        ="viewport"         content="width=device-width, initial-scale=1.0" />
-    <meta name        ="author"           content="Dakalo Tshikororo" />
+  <head lang="en" dir="ltr">
+    <meta charset ="utf-8" />
+    <meta name    ="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title> Home </title>
 
   </head>
   <body>
-	<!-- Start of wrapper container -->
+    <!-- Start of wrapper container -->
     <div>
-		<!-- Start Header container -->
+        <!-- Start Header container -->
         <header>
             <div>
-                <div> <span> tshikororoda </span> </div>
+                <div> <span> My name </span> </div>
                 <div>
                     <nav>
                         <ul>
-                            <li> <a href="#"> Home      </a> </li>
-                            <li> <a href="#"> About     </a> </li>
-                            <li> <a href="#"> Skills    </a> </li>
-                            <li> <a href="#"> Portfolio </a> </li>
-                            <li> <a href="#"> Contact   </a> </li>
+                            <li> <a> Home      </a> </li>
+                            <li> <a> About     </a> </li>
+                            <li> <a> Skills    </a> </li>
+                            <li> <a> Portfolio </a> </li>
+                            <li> <a> Contact   </a> </li>
                         </ul>
                     </nav>
                 </div>
-                <p class="clear tda-float-right"> You are welcome, you can view the site as you wish </p>
+                <p> You are welcome, you can view the site as you wish </p>
             </div>
         </header>
-		    <!-- End Header container -->
+        <!-- End Header container -->
 
-		    <!-- Start Main content container -->
+        <!-- Start Main content container -->
         <main></main>
-		    <!-- End Main content container -->
+        <!-- End Main content container -->
 
-		    <!-- Start footer container -->
+        <!-- Start footer container -->
         <footer>
             <div>
-                <span> 2020 &#64; tshikororoda </span>
+                <span> 2020 &#64; dev-personal </span>
             </div>
         </footer>
-		    <!-- End footer container -->
+        <!-- End footer container -->
     </div>
-	  <!-- End of wrapper container -->
+    <!-- End of wrapper container -->
   </body>
 </html>
 
@@ -548,9 +560,10 @@ This is the entry point of our website. We have now remove main content from *in
 <a name="home"></a>
 #### Module Home - Landing page
 
-+ [Create a file called *Home.html*](#)
-+ [Add Home module source code or mark-up](#)
++ [Create a file called *`Home.html`*](#chome)
++ [Add Home module source code or mark-up](#homemarkup)
 
+<a name="chome"></a>
 *Create a html file called: Home.html. the source code on this html document will be served as a default landing page*
 
 ``` sh
@@ -559,40 +572,55 @@ touch Home.html
 
 ```
 
+<a name="homemarkup"></a>
+*@Home.html*
 *Add source code below to Home.html, this html document will be loaded by default because it contain source code to be rendered on landing page*
 
 ``` html
 
-	<div>
-		<section>
-		  <h2> First section </h2>
-		  <h1> Hi Web programmer </h1>
+<div>
+	<section>
+	  <h2> First section </h2>
+	  <h1> Hi Web programmer </h1>
 
-		  <ul>
-			  <li> Web/ Internet Technology </li>
-			  <li> Web framework </li>
-			  <li> Databases     </li>
-			  <li> React, Next.js, Vue </li>
-		  </ul>
+	  <ul>
+		  <li> Web/ Internet Technology </li>
+		  <li> Web framework </li>
+		  <li> Databases     </li>
+		  <li> React, Next.js, Vue </li>
+	  </ul>
 
-		  <div>
-			  <button> Explore Portfolio  </button>
-			  <button> Become my employer </button>
-		  </div>
-		</section>
-	</div>
-	<div>
-		<section>
-		  <h2> Second section </h2>
-		  <p> &#8220; I'm dedicated to offer outstanding service &#8221; </p>
+	  <div>
+		  <button> Explore Portfolio  </button>
+		  <button> Become my employer </button>
+	  </div>
+	</section>
+</div>
+<div>
+	<section>
+	  <h2> Second section </h2>
+	  <p> &#8220; I'm dedicated to offer outstanding service &#8221; </p>
 
-		  <ul>
-			  <li> South African based but available for global markets  </li>
-			  <li> Trust Index rating of 9.6 in development </li>
-			  <li> Fast and reliable support  </li>
-		  </ul>
-		</section>
-	</div>
+	  <ul>
+		  <li> South African based but available for global markets  </li>
+		  <li> Trust Index rating of 9.6 in development </li>
+		  <li> Fast and reliable support  </li>
+	  </ul>
+	</section>
+</div>
+
+```
+
+#### /> Staged main branch and merge to `dakalo/home` branch
+*Now, execute the command below:*
+
+``` sh
+
+  git add Index.html Home.html # staged main branch
+  git commit -m " Second commit on main branch: Split source code on index.html. We have to file, Index.html and Home.html "
+  git checkout dakalo/home
+  git merge main
+  git checkout main
 
 ```
 
@@ -601,20 +629,21 @@ touch Home.html
 ***
 
 <a name="entrypointLoadmodule"></a>
-# Load module mark-up to *`Index.html`*
+### /> Load module mark-up to *`Index.html`*
 
 *Now,* we are going to create a custom JavaScript function to handle two things:
 + [Change `document title` to the active module.](#cdocumenttitle)
 + Load module content to `Index.html`
-  + Load module content into `main element` from `HTML document`.
-  + Load module content into `main element` from `XML document`.
+  + [Load `HTML document` to `main element`: `JavaScript, iframe element`.](#firstmethods) <span style="color:red;font-size: 20px;">&#10006;</span>
+  + [Load `HTML document` to `main element`: `JavaScript Ajax`.](#secondmethods)  <span style="color:green;font-size: 20px;">&#10004;</span>
+  + [Load `HTML document` to `main element`: `JavaScript Fetch API`.](#secondmethods) <span style="color:green;font-size: 20px;">&#10004;</span>
 
 <a name="cdocumenttitle"></a>
-## Change `document title` to the active module.
+#### Change `document title` to the active module.
 
 We want html `document title` to dynamically change to an *`active module`*. When user request to access module mark-up, The html `document title` on entry point must dynamically change to the module name. *For instance: If user make a request to navigate to `about module`, the title of the document should be change to `About` etc. By default,* the html document title will be Home, because home module will be loaded by default.
 
-
+*@./assets/js/*
 *First, create a separate or external JavaScript document called View.js and link the*
 
 ``` sh
@@ -622,12 +651,13 @@ We want html `document title` to dynamically change to an *`active module`*. Whe
   touch View.js
 
 ```
+*@Index.html*
 *Next, link the external JavaScript document on entry point (Index.html) at the bottom of the document as shown below:*
 
 ``` html
 
     <!-- External JavaScript -->
-    <script src="../assets/js/View.js"></script>
+    <script src="./assets/js/View.js"></script>
   </body>
 </html>
 
@@ -637,117 +667,261 @@ We want html `document title` to dynamically change to an *`active module`*. Whe
 
 ``` html
 
-  <li> <a data-moduleName="home">      Home      </a> </li>
-  <li> <a data-moduleName="about">     About     </a> </li>
-  <li> <a data-moduleName="skills">    Skills    </a> </li>
-  <li> <a data-moduleName="portfolio"> Portfolio </a> </li>
-  <li> <a data-moduleName="contact">   Contact   </a> </li>
+<li> <a data-nav="home">      Home      </a> </li>
+<li> <a data-nav="about">     About     </a> </li>
+<li> <a data-nav="skills">    Skills    </a> </li>
+<li> <a data-nav="portfolio"> Portfolio </a> </li>
+<li> <a data-nav="contact">   Contact   </a> </li>
 
 ```
 
 *Pseudo code for dynamicaly Change the document title*
 
-> + Trigger DOMContentLoaded event
++ Trigger `DOMContentLoaded` event interface
       document.addEventListener('DOMContentLoaded', callbackfunction
-  + Define const variable HTMLDocumentModules.
-  + Get / select all element whose attribute is data-nav
+  + Define `const ` variable `HTMLDocumentModules`.
+  + Get / select all element whose attribute is `data-nav`
         HTMLDocumentModules = document.querySelectorAll()
- + Loop through each HTMLDocumentModules nodeList element
+ + Loop through each module on `HTMLDocumentModules` nodeList element
 		    HTMLDocumentModules.forEach(callbackfunction)
-    + Trigger onclick event on selected element within the loop.
+    + Trigger `onclick` event on `selected element` within the loop.
           HTMLDocumentModule.onclick(event,callbackfunction) /
           HTMLDocumentModule.addEventListener(event,callbackfunction)
-      + set html document title.
-        document.title
-      + set content color
-        style.color
+      + Set html document title.
+            document.title
 
-*view.js*
+*@View.js*
 
 ``` js
 
 "use strict"
 
-  /* Dynamically change document title  */
-  document.addEventListener('DOMContentLoaded', () => {
+/* Dynamically change document title  */
+document.addEventListener('DOMContentLoaded', () => {
 
-		const HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
+	const HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
 
-		HTMLDocumentModules.forEach( HTMLDocumentModule => {
-			HTMLDocumentModule.addEventListener('click', () => {
-				document.title = HTMLDocumentModule.dataset.nav
-			})
+	HTMLDocumentModules.forEach( HTMLDocumentModule => {
+		HTMLDocumentModule.addEventListener('click', () => {
+			document.title = HTMLDocumentModule.dataset.nav
 		})
 	})
+})
 
 ```
-
-## Load module into `main` form HTML document
+<a name="firstmethods"></a>
+####  Load `HTML document` to `main element`: `JavaScript, iframe`.
 
 When user trigger *click* event on module link, the module markup must be loaded dynamically to an entry point into `main element`. In HTML we have element that loads another html document markup within the another html document markup. it is an `iframe` element. Using iframe is simple and effective. When the web browser encounters an `iframe` element, `it creates a new document environment to load the document`.
 
-*However, AJAX *(Asynchronous JavaScript And XML) can create more interactive and integrated sites than using an `iframe` to load another static html document.*
+*However, AJAX (Asynchronous JavaScript And XML) can create more interactive and integrated sites than using an `iframe` to load another static html document.*
 
 *Pseudo code for loading html document into another html document.*
 
-> + Trigger `DOMContentLoaded` interface event
++ Trigger `DOMContentLoaded` interface event
       document.addEventListener('DOMContentLoaded', callbackfunction
-  + Define const variable *`iframe, main, modulePath`*.
-  + Get / select main element and create iframe
-        main    = document.querySelector()
-        iframe  = document.createElement()
- + Loop through each HTMLDocumentModules nodeList element
+  + Define `const` variable *`iframe, modulePath`*.
+  + Get / select iframe element
+        iframe = document.querySelector()
+  + Loop through each module on `HTMLDocumentModules` nodeList element
 		    HTMLDocumentModules.forEach(callbackfunction)
     + Trigger *`onclick`* event on selected element within the loop.
           HTMLDocumentModule.onclick(event,callbackfunction) /
           HTMLDocumentModule.addEventListener(event,callbackfunction)
-      + Assign path to modulePath.
+      + Assign `path` to `modulePath`.
       + Set attribute *src* value to be *`modulePath`*
-+ Append *`iframe`* element into *`main`* element.
-      main.append(iframe)
 
-*View.js*
+*@View.js*
 
 ``` js
 
 "use strict"
 
 /* Dynamically load html document markup  */
-const main          = document.querySelector('main')
-const iframe        = document.createElement("iframe")
-const fileExtension =  ".html"
+const HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
+const iframe              = document.querySelector("#iframe")
 
 HTMLDocumentModules.forEach( HTMLDocumentModule => {
   HTMLDocumentModule.onclick = () => {
-    const modulePath  = "./modules/" + HTMLDocumentModule.dataset.nav + fileExtension
+    const modulePath  = `./modules/${HTMLDocumentModule.dataset.nav}.html`
     iframe.setAttribute("src", modulePath)
   }
 })
 
-main.append(iframe)
+```
+
+*@Index.html*
+*Within main element on `Index.html` we add &lt;`iframe`&gt; element as shown below.*
+
+``` html
+
+<main>
+  <iframe id="iframe" title="moduleFile" src="./modules/Home.html"></iframe>
+</main>  
+
+```
+
+##### *Iframe Caveats*
+
++ We can't directly interact with `inner iframe` element through parent window or document even though both html documents reside on the same domain.
+
+  *As I said earlier, iframe is a very convenient way to display another html document on another html document but it's complicated if we want to have a single stylesheet or JavaScript on parent html document (top) to control both document.*
+
+  *Suppose we want to change color of h1 element on the referenced module (Home.html), if the stylesheet is on the parent html document, it won't have effect of any h1 element inside of an iframe. `Iframe create a window on top of another window.` This means there's no communication channel between the two documents, therefore we need to establish communication channel between them. Two way communication between parent document and iFrame.*
+
+  Stylesheet code below is on the external stylesheet document on entry point within head element of the parent document as shown below. The stylesheet code below will only have effect on the iframe element because it is an element on the parent html document.*
+
+``` CSS
+/* <link rel="stylesheet" type="text/css" href="./assests/css/styles.main.css" />
+    Adds sylesheet properties: width, height and border to iframe. */
+
+iframe {
+
+  width : 100%;
+  height: 400px;
+  border: 01px solid #f1f1f1;
+
+}
+
+iframe h1 { color: red; }
+
+```
+<a name="secondmethods"></a>
+#### Load `HTML document` to `main element`: *`JavaScript Ajax`*.
+
+*Pseudo code to append content to html element from another html document.*
+
++ Trigger `DOMContentLoaded` interface event
+      document.addEventListener( 'DOMContentLoaded', callbackfunction )
+  + Get / select main element
+          main = document.querySelector()
+  + Loop through each module on `HTMLDocumentModules` nodeList element
+		    HTMLDocumentModules.forEach( callbackfunction )
+    + Trigger *`onclick`* event on selected element within the loop.
+          HTMLDocumentModule.onclick( event, callbackfunction ) /
+          HTMLDocumentModule.addEventListener( event, callbackfunction )
+      + Define `let` variable called *`xhttp, file`*.
+      + Create new `XMLHttpRequest` to assign to `xhttp` variable.
+      + Assign  module name to `file` variable
+      + Check if `file`
+        + Define anonymous function assign to onreadystatechange.
+              xhttp.onreadystatechange = function() {}
+          + Check if this `readyState` status is 4
+            + Check if this `status` is 200
+              + Append 'respond' to main element.
+            + Check if this `status` is 404
+              + Append `"404 : File not found"` string to main element
+      + Get the file: xhttp.open()
+      + send the file: xhttp.send()
+
+*@View.js*
+
+``` js
+
+"use strict"
+
+const 	main				= document.querySelector('main')
+const 	HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
+
+HTMLDocumentModules.forEach( HTMLDocumentModule => {
+  HTMLDocumentModule.onclick = () => {
+    document.title = HTMLDocumentModule.dataset.nav
+
+    let xhttp = new XMLHttpRequest()
+    let file  = `${HTMLDocumentModule.dataset.nav}.html`
+
+    if ( file ) {
+      xhttp.onreadystatechange = function() {
+        if ( this.readyState == 4 ) {
+          if ( this.status == 200 ) { main.innerHTML = this.responseText }
+          if ( this.status == 404 ) { main.innerHTML = '<h1> 404 : File not found </h1>' }			
+        }
+      }
+    }
+
+    xhttp.open("GET", `modules/${file}`, true)
+    xhttp.send()
+  }
+})
+
+```
+
+####   Load `HTML document` to `main element`: `JavaScript Fetch API`
+
+*In this section,* we use `JavaScript Fetch API interface` to make `asynchronous HTTP requests` to server from web browsers to fetch module content / markup. Fetch API is much simpler and cleaner. It uses the `Promise` to deliver more flexible features to make requests to servers from the web browsers. No need for XMLHttpRequest anymore.
+
+*Pseudo code to append content to html element from another html document.*
+
++ Trigger `DOMContentLoaded` interface event
+      document.addEventListener( 'DOMContentLoaded', callbackfunction )
+  + Get / select main element
+          main = document.querySelector()
+  + Loop through each module on `HTMLDocumentModules` nodeList element
+		    HTMLDocumentModules.forEach( callbackfunction )
+    + Trigger *`onclick`* event on selected element within the loop.
+          HTMLDocumentModule.onclick( event, callbackfunction ) /
+          HTMLDocumentModule.addEventListener( event, callbackfunction )
+      + Define `const` variable *`moduleName, modulePath`*.
+      + Assign `path` to `modulePath`.
+      + Pass `modulePath` as parameter on `getModuleFile` function
+            getModuleFile( modulePath )
+  + Define function called `getModuleFile` with file parameter variable
+    + Define local variables called `moduleFile, moduleContent`
+    + Fetch the *`url`* of the module file and assign to `moduleFile`
+    + Check if `moduleFile` status is 200
+      + Get module content and assign to `moduleContent`.
+      + Append `moduleContent` to main element.
+    + Check if `moduleFile` status is 404
+        + Append `"Not found"` string to main element
+
+*@View.js*
+
+``` js
+
+"use strict"
+
+HTMLDocumentModules.forEach( HTMLDocumentModule => {
+  HTMLDocumentModule.onclick = () => {
+    const moduleName = onlyFirstLetterUpperCase( HTMLDocumentModule.dataset.nav )
+    const modulePath = `./modules/${moduleName}.html`
+
+    document.title	 = moduleName
+    getModuleFile( modulePath )
+  }
+})
+
+async function getModuleFile ( file ) {
+
+  let moduleFile
+  let moduleContent
+
+  moduleFile = await fetch ( file )
+
+  if( moduleFile.status == 200 ) {
+    moduleContent = await moduleFile.text()
+    main.innerHTML = moduleContent
+  }else if ( moduleFile.status == 404 ) {
+    main.innerHTML = '<h1> 404 Not found. </h1>'
+  }
+}
+
+const onlyFirstLetterUpperCase = (word) => {
+  return (word.charAt(0).toUpperCase() +
+      word.slice(1 , word.length).toLowerCase())
+}
+
+```
+
+#### /> Staged main branch and merge to `dakalo/home` branch
+*Now, execute the command below:*
+
+``` sh
+
+  git add View.js # staged main branch
+  git commit -m " Third commit on main branch: Load module mark-up to Index.html using Fetch API, second merge to dakalo/home branch"
+  git checkout dakalo/home
+  git merge main
 
 ```
 
 *` Last modified: 2023-07-16 time: 09:41AM `*
-
-***
-
-*Next,* link the external stylesheet document on entry point within head element of the document as shown below:
-
-``` CSS
-/* <link rel="stylesheet" href="main.css" />
-
-    Adds sylesheet properties: width, height and border to iframe. */
-
-  iframe {
-
-    width : 100%;
-    height: 400px;
-    border: 01px solid #f1f1f1;
-
-  }
-
-```
-
-*Iframe Caveats*
-+ We cannot directly apply stylesheet to the `inner iframe` element through parent window stylesheet selectors even though it's domain is same as parent.
