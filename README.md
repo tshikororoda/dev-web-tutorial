@@ -243,7 +243,7 @@ git commit -m " First commit: create a version of all modules files "
 <a name="creating-a-new-branch"></a>
 #### /> `Git:` *create new* branch - *for each module*
 
-*Now,* before we do actual coding, let’s create a `new branches` for each modules *(.html files)*. As we said earlier, the whole purpose of this is to learn. We have already said we will create branches for each page or module and *`merge`* them to *`main`* branch whenever we are happy with the results. It’s a good practice to commit file and merge branches when we have meet project requirements at each stage. So, lets create a new branch called *`dakalo/home, dakalo/about, thalukanyo/skills, dakalo/home, tshedza/portfolio, dakalo/contact`*.
+*Now,* before we do actual coding, let’s create a `new branches` for each modules *(.html files)*. As we said earlier, the whole purpose of this is to learn. We have already said we will create branches for each page or module and *`merge`* them to *`main`* branch whenever we are happy with the results. It’s a good practice to commit file and merge branches when we have meet project requirements at each stage. So, lets create a new branch called *`dakalo/home, dakalo/about, dakalo/skills, dakalo/home, dakalo/portfolio, dakalo/contact`*.
 
 *To do this, let’s execute the following command*:
 
@@ -251,8 +251,8 @@ git commit -m " First commit: create a version of all modules files "
 
 git branch dakalo/home
 git branch dakalo/about
-git branch tshedza/skills
-git branch tshedza/portfolio
+git branch dakalo/skills
+git branch dakalo/portfolio
 git branch dakalo/contact
 
 ```
@@ -804,22 +804,24 @@ iframe h1 { color: red; }
       + Create new `XMLHttpRequest` to assign to `xhttp` variable.
       + Assign  module name to `file` variable
       + Check if `file`
-        + Define anonymous function assign to onreadystatechange.
-              xhttp.onreadystatechange = function() {}
-          + Check if this `readyState` status is 4
+        + Define anonymous `function()`.
+          + Check if this `readyState` status is done (4)
             + Check if this `status` is 200
-              + Append 'respond' to main element.
+              + Append respond to main element.
             + Check if this `status` is 404
-              + Append `"404 : File not found"` string to main element
-      + Get the file: xhttp.open()
-      + send the file: xhttp.send()
+              + Append `"404 : File not found"` string to main element.
+        + Assign anonymous `function()` to onreadystatechange event.
+              xhttp.onreadystatechange = function() {}
+      + Initialize it: GET-request for the URL
+            xhttp.open('GET', 'url', true)
+      + Send the request: `xhttp.send()`
 
 *@View.js*
 
 ``` js
 
 "use strict"
-
+xhttp.send()
 const 	main				= document.querySelector('main')
 const 	HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
 
@@ -923,5 +925,6 @@ const onlyFirstLetterUpperCase = (word) => {
   git merge main
 
 ```
+Response Type
 
 *` Last modified: 2023-07-16 time: 09:41AM `*

@@ -1,74 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset	="utf-8" />
+    <meta name		="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-a {
+    <title> Home </title>
+	<link rel="stylesheet" type="text/css" href="./assests/css/styles.main.css" />
+  </head>
+  <body>
+    <!-- Start of wrapper container -->
+    <div>
+      <!-- Start Header container -->
+        <header>
+            <div>
+                <div>
+                    <span> My name </span>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+							<li> <a data-nav="home">      Home      </a> </li>
+							<li> <a data-nav="about">     About     </a> </li>
+							<li> <a data-nav="skills">    Skills    </a> </li>
+							<li> <a data-nav="portfolio"> Portfolio </a> </li>
+							<li> <a data-nav="contact">   Contact   </a> </li>
+                        </ul>
+                    </nav>
+                </div>
 
-border: 1px black solid;
-font-size: 50px;
-}
-</style>
+                <p> You are welcome, you can view the site as you wish </p>
+            </div>
+        </header>
+        <!-- End Header container -->
 
-<a data-nav="HOME">Home</a>
-<a data-nav="about">About</a>
-<a data-nav="skills">Skills</a>
-<a data-nav="portfolio">portfolio</a>
+        <!-- Start Main content container -->
+        <main>
+			<!--<iframe id="iframe" title="moduleFile" src="./modules/Home.html"></iframe>-->
+		</main>
+        <!-- End Main content container -->
 
-<!--
-	
-	How it works.
-
-
-Next, define an array of three numbers. Home
-Then, declare a variable sum and assign it a value of zero.
-After that, call the forEach() method on the numbers array. In the callback function, add the element to the sum variable and call the increase() method of the counter object. Notice that the counter object is referred to as this inside the callback function.
-Finally, log the value of the sum and current value of the counter in the web console.
-In this tutorial, you have learned how to use the JavaScript Array forEach() method to execute a callback on every element of an array.
-
-
-
--->
-
-
-
-<main></main>
-<script>
-
-	document.addEventListener('DOMContentLoaded', () => {
-	
-				const 	main				= document.querySelector('main')
-		const 	HTMLDocumentModules = document.querySelectorAll("a[data-nav]")
-		
-		const 	iframe 				= document.createElement("iframe")
-		
-		HTMLDocumentModules.forEach( HTMLDocumentModule => {	
-			HTMLDocumentModule.onclick = () => {
-			
-				let	moduleName		= HTMLDocumentModule.dataset.nav
-				let	documentTitle	= moduleName.charAt(0).toUpperCase() +
-										moduleName.slice(1 , moduleName.length).toLowerCase()
-				const fileExtension =  ".html"
-				const path 			= "./modules/" + documentTitle + fileExtension
-				
-					iframe.setAttribute("src", path)
-					iframe.setAttribute("id", "frame")
-					iframe.setAttribute("title", moduleName)
-					
-					// Set clicked module custom data to document title
-					document.title 					= documentTitle
-					HTMLDocumentModule.style.color	= "red"
-					
-					var iframeID = document.getElementById("frame");
-					var iframeCW = (iframeID.contentWindow || iframeID.contentDocument);
- 
-					if (iframeCW.document) iframeCW = iframeCW.document;
-						iframeCW.body.style.border = "5px solid red";
-						iframeCW.body.style.color = "red"
-			}
-		})		
-					iframe.style.width  = "100%"
-					iframe.style.height = "400px"
-					//iframe.style.border = "01px solid #f1f1f1"
-					main.append(iframe)
-	})
-	
-</script>
-
+        <!-- Start footer container -->
+        <footer>
+            <div>
+                <span> 2023 &#64; dev-personal </span>
+            </div>
+        </footer>
+        <!-- End footer container -->
+    </div>
+    <!-- End of wrapper container -->
+	<!-- External JavaScript -->
+    <script src="./assests/js/View.js"></script>
+  </body>
+</html>
