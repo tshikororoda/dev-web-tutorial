@@ -63,21 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.title	 = moduleName
 			getModuleFile(modulePath)
 		}
-	
-		async function getModuleFile ( file ) {
-			let moduleFile = await fetch ( file )
-			if( moduleFile.status == 200 ) { 
-				let moduleContent = await moduleFile.text()
-				main.innerHTML = moduleContent
-				
-			}else if ( moduleFile.status == 404 ) {	
-				main.innerHTML = '<h1>Not found</h1>'
-			}
-		}
-		
-		const onlyFirstLetterUpperCase = (word) => {
-			return (word.charAt(0).toUpperCase() +
-					word.slice(1 , word.length).toLowerCase())
-		}
 	})
+
+	async function getModuleFile ( file ) {
+		let moduleFile = await fetch ( file )
+		if( moduleFile.status == 200 ) { 
+			let moduleContent = await moduleFile.text()
+			main.innerHTML = moduleContent
+			
+		}else if ( moduleFile.status == 404 ) {	
+			main.innerHTML = '<h1 id="not-found"> Not found </h1>'
+		}
+	}
+	
+	const onlyFirstLetterUpperCase = (word) => {
+		return (word.charAt(0).toUpperCase() +
+				word.slice(1 , word.length).toLowerCase())
+	}
 })

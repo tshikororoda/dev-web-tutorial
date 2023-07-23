@@ -1,4 +1,4 @@
-v# Web Tutorial
+# Web Tutorial
 
 #### /> Table of contents
 + 01 ][ Project requirements ](#projectrequirements)
@@ -312,7 +312,7 @@ git checkout dakalo/home
 
 The *first* thing we will do is to *sketch-out the layout* of our websites landing page. We do have *`apps specialized for prototype design`* which *professional developer* uses to design full – scale layout of a websites. Grab pen and paper and sketch-out roughly, how you want our website to look. But for sketch below is design using *Microsoft PowerPoint 2016* after a rough sketch on paper.
 
-![layout design](./src/resources/sketch-home.png)
+![layout design](./resources/sketch-home.png)
 
 <a name="choosing-your-assets"></a>
 #### /> Choosing our `assets`
@@ -434,7 +434,7 @@ Here are some of the things validators *([w3 Mark-up validation service](https:/
 #### /> Rendered landing page
 
 *Results on browsers*
-![layout design](./src/resources/rendered-index.png)
+![layout design](./resources/rendered-index.png)
 
 #### /> Merging home branch to main branch
 *Now, execute the command below:*
@@ -634,8 +634,8 @@ touch Home.html
 *Now,* we are going to create a custom JavaScript function to handle two things:
 + [Change `document title` to the active module.](#cdocumenttitle)
 + Load module content to `Index.html`
-  + [Load `HTML document` to `main element`: `JavaScript, iframe element`.](#firstmethods) <span style="color:red;font-size: 20px;">&#10006;</span>
-  + [Load `HTML document` to `main element`: `JavaScript Ajax`.](#secondmethods)  <span style="color:green;font-size: 20px;">&#10004;</span>
+  + [Load `HTML document` to `main element`: `JavaScript, iframe element`.](#firstmethods) <span style="color:red;font-size:20px;">&#10006;</span>
+  + [Load `HTML document` to `main element`: `JavaScript Ajax`.](#secondmethods)  <span style="color:green;font-size:20px;">&#10004;</span>
   + [Load `HTML document` to `main element`: `JavaScript Fetch API`.](#secondmethods) <span style="color:green;font-size: 20px;">&#10004;</span>
 
 <a name="cdocumenttitle"></a>
@@ -925,6 +925,5 @@ const onlyFirstLetterUpperCase = (word) => {
   git merge main
 
 ```
-Response Type
 
 *` Last modified: 2023-07-16 time: 09:41AM `*
