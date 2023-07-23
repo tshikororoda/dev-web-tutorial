@@ -889,23 +889,25 @@ HTMLDocumentModules.forEach( HTMLDocumentModule => {
 
     document.title	 = moduleName
     getModuleFile( modulePath )
-  }
-})
+  } // End onclick()
+}) // End foreach()
+
+// Load Home as default
+const landingModule = `./modules/Home.html`
+getModuleFile( landingModule )
 
 async function getModuleFile ( file ) {
-
   let moduleFile
   let moduleContent
 
   moduleFile = await fetch ( file )
-
   if( moduleFile.status == 200 ) {
     moduleContent = await moduleFile.text()
     main.innerHTML = moduleContent
   }else if ( moduleFile.status == 404 ) {
     main.innerHTML = '<h1> 404 Not found. </h1>'
   }
-}
+}// End fetch()
 
 const onlyFirstLetterUpperCase = (word) => {
   return (word.charAt(0).toUpperCase() +

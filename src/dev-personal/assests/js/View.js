@@ -65,13 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	async function getModuleFile ( file ) {
+	
+	// Load module as landing page 
+	const landingModule = `./modules/Home.html`
+	getModuleFile( landingModule )
+
+	async function getModuleFile ( file ) {	
 		let moduleFile = await fetch ( file )
 		if( moduleFile.status == 200 ) { 
-			let moduleContent = await moduleFile.text()
-			main.innerHTML = moduleContent
-			
-		}else if ( moduleFile.status == 404 ) {	
+			let moduleContent	= await moduleFile.text()
+				main.innerHTML 	= moduleContent
+		}else if ( moduleFile.status == 404 ) {
 			main.innerHTML = '<h1 id="not-found"> Not found </h1>'
 		}
 	}
