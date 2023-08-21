@@ -11,7 +11,7 @@
 + 07 ][ Home - Landing page ](#home-landing-page)
 + 08 ][ Moving project directory to a local web server ](#webserver)
 + 09 ][ Split source code on *index.html* ](#split-source-code)
-+ 10 ][ Load module mark-up to entry point](#load-module-dynamicaly)
++ 10 ][ Load module mark-up to entry point](#load-module-dynamically)
 
 <a name="project-requirements"></a>
 #### &#47;&#8227; Project requirements
