@@ -154,7 +154,7 @@ git init
 
 &#182; *Now,* let’s create the *sub-directory* folders using *git bash terminal*. For creating sub-folder called `modules` and `assets`. Modules and assets are sub-directory of *`dev-personal`* root project directory. *Inside* `dev-personal`, we will create those two sub-directory and then inside of assets create sub-directory named: `css`, `js` and `img` as shown below.
 
-``` sh
+```
 # Project structure code:
 
 ├──dev-personal
