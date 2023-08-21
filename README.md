@@ -301,7 +301,7 @@ Let’s follow these steps below for workflow:
 
   &#182; Before we *staged* and *commit* these changes on our project repository, we must validate our mark-up language. To validate html document is to check mark-up source code if it's abiding by all the rules according to the version of HTML we are using.
 
-  Professional web developers catch errors in their written mark-up by validating their html document. Html Documents that are error-free, are said to be valid HTML document. It is strongly recommended that we validate our mark-up html documents, especially for professional sites. Valid documents are more consistent on a variety of browsers, they display more quickly, and they are more accessible. We use for Html5 documents, we use [Nu Html Checker](https://validator.nu/){:target="_blank"} validator.
+  Professional web developers catch errors in their written mark-up by validating their html document. Html Documents that are error-free, are said to be valid HTML document. It is strongly recommended that we validate our mark-up html documents, especially for professional sites. Valid documents are more consistent on a variety of browsers, they display more quickly, and they are more accessible. We use for Html5 documents, we use [Nu Html Checker](https://validator.nu/) validator.
 
   Browser developer tools like the Firebug plug-in for Firefox or the built-in developer tools in Safari and Chrome also have validators so we an check our markup if is error-free.
 
